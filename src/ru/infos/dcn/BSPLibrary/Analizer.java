@@ -33,7 +33,7 @@ public class Analizer {
 
     public void treePrint(){
         for (int i=0;i<10;i++){
-            out.println("x="+ pointArraySource[i].getX()+" y="+ pointArraySource[i].getY());
+            out.println("x= "+ pointArraySource[i].getX()+" y="+ pointArraySource[i].getY());
         }
     }
 }
