@@ -1,3 +1,5 @@
+import ru.infos.dcn.BSPLibrary.Analyser;
+
 import java.awt.*;
 import java.awt.font.*;
 import java.awt.geom.*;
@@ -6,8 +8,11 @@ import javax.swing.*;
 public class GraphingData extends JPanel {
     int[] data = {
             21, 14, 18, 03, 86, 88, 74, 87, 54, 77,
-            61, 55, 48, 60, 49, 36, 38, 27, 20, 18
+            61, 55, 48, 50, 49, 36, 38, 27, 20, 18
     };
+    Analyser analyser =new Analyser();
+    int[] dataX;
+    int[] dataY;
     final int PAD = 20;
 
     protected void paintComponent(Graphics g) {
@@ -27,7 +32,7 @@ public class GraphingData extends JPanel {
         LineMetrics lm = font.getLineMetrics("0", frc);
         float sh = lm.getAscent() + lm.getDescent();
         // Ordinate label.
-        String s = "data";
+        String s = "y axis";
         float sy = PAD + ((h - 2*PAD) - s.length()*sh)/2 + lm.getAscent();
         for(int i = 0; i < s.length(); i++) {
             String letter = String.valueOf(s.charAt(i));
@@ -42,19 +47,37 @@ public class GraphingData extends JPanel {
         float sw = (float)font.getStringBounds(s, frc).getWidth();
         float sx = (w - sw)/2;
         g2.drawString(s, sx, sy);
-        // Draw lines.
         double xInc = (double)(w - 2*PAD)/(data.length-1);
         double scale = (double)(h - 2*PAD)/getMax();
-        g2.setPaint(Color.green.darker());
-        for(int i = 0; i < data.length-1; i++) {
-            double x1 = PAD + i*xInc;
-            double y1 = h - PAD - scale*data[i];
-            double x2 = PAD + (i+1)*xInc;
-            double y2 = h - PAD - scale*data[i+1];
-            g2.draw(new Line2D.Double(x1, y1, x2, y2));
+
+        // Draw lines.
+//        g2.setPaint(Color.green.darker());
+//        for(int i = 0; i < data.length-1; i++) {
+//            double x1 = PAD + i*xInc;
+//            double y1 = h - PAD - scale*data[i];
+//            double x2 = PAD + (i+1)*xInc;
+//            double y2 = h - PAD - scale*data[i+1];
+//            g2.draw(new Line2D.Double(x1, y1, x2, y2));
+//        }
+
+        //initialize data
+        dataX = new int[10];
+        dataY = new int[10];
+        for(int i = 0; i < 10; i++) {
+            dataX[i]=(int)analyser.getPointArraySource()[i].getX();
+            System.out.println("x"+i+"= "+dataX[i]);
+            dataY[i]=(int)analyser.getPointArraySource()[i].getY();
+            System.out.println("y"+i+"= "+dataY[i]);
         }
+
         // Mark data points.
         g2.setPaint(Color.red);
+//        for(int i = 0; i < 10; i++) {
+////            double x = PAD + dataX[i]*xInc;             //х-координата точки
+//            double x = PAD + i*xInc;
+//            double y = h - PAD - scale*dataY[i];        //у-координата точки
+//            g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
+//        }
         for(int i = 0; i < data.length; i++) {
             double x = PAD + i*xInc;
             double y = h - PAD - scale*data[i];

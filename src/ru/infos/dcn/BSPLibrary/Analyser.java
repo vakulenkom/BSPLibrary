@@ -9,16 +9,21 @@ import static java.lang.System.*;
  * Time: 13:53
  * To change this template use File | Settings | File Templates.
  */
-public class Analizer {
+public class Analyser {
     private Point point;
-    private Point[] pointArraySource = new Point[10];
+    private Point[] pointArraySource;
     private Point[] pointArrayNode;
 
-    public Analizer() {
+    public Analyser() {
+        pointArraySource = new Point[10];
         for (int i=0;i<10;i++){
-            point = new Point(Math.round(Math.random()*100), Math.round(Math.random()*100));
+            point = new Point(Math.round(Math.random() * 10), Math.round(Math.random() * 10));
             pointArraySource[i]=point;
         }
+    }
+
+    public Point[] getPointArraySource() {
+        return pointArraySource;
     }
 
     public boolean analize(Point point1, Point point2){
