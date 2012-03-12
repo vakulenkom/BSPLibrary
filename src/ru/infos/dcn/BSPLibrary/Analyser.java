@@ -17,7 +17,7 @@ public class Analyser {
     public Analyser() {
         pointArraySource = new Point[10];
         for (int i=0;i<10;i++){
-            point = new Point(Math.round(Math.random() * 10), Math.round(Math.random() * 10));
+            point = new Point(Math.round(Math.random() * 15), Math.round(Math.random() * 80));
             pointArraySource[i]=point;
         }
     }

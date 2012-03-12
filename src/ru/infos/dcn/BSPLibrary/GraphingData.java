@@ -72,15 +72,9 @@ public class GraphingData extends JPanel {
 
         // Mark data points.
         g2.setPaint(Color.red);
-//        for(int i = 0; i < 10; i++) {
-////            double x = PAD + dataX[i]*xInc;             //х-координата точки
-//            double x = PAD + i*xInc;
-//            double y = h - PAD - scale*dataY[i];        //у-координата точки
-//            g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
-//        }
-        for(int i = 0; i < data.length; i++) {
-            double x = PAD + i*xInc;
-            double y = h - PAD - scale*data[i];
+        for(int i = 0; i < 10; i++) {
+            double x = PAD + dataX[i]*xInc;             //х-координата точки
+            double y = h - PAD - scale*dataY[i];        //у-координата точки
             g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
         }
     }

@@ -61,7 +61,7 @@
       <file leaf-file-name="GraphingData.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="34" selection-start="2354" selection-end="2354" vertical-scroll-proportion="0.58924204">
+            <state line="74" column="42" selection-start="2709" selection-end="2709" vertical-scroll-proportion="0.85330075">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,7 +81,7 @@
       <file leaf-file-name="Analyser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analyser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="32" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+            <state line="19" column="90" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -167,8 +167,8 @@
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analizer.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analyser.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analyser.java" />
       </list>
     </option>
   </component>
@@ -593,14 +593,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analyser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="32" selection-start="567" selection-end="567" vertical-scroll-proportion="0.0">
+        <state line="19" column="90" selection-start="530" selection-end="530" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="34" selection-start="2354" selection-end="2354" vertical-scroll-proportion="0.58924204">
+        <state line="74" column="42" selection-start="2709" selection-end="2709" vertical-scroll-proportion="0.85330075">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
