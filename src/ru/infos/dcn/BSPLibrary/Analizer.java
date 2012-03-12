@@ -1,5 +1,4 @@
 package ru.infos.dcn.BSPLibrary;
-import java.lang.Math.*;
 
 import static java.lang.System.*;
 
@@ -12,17 +11,13 @@ import static java.lang.System.*;
  */
 public class Analizer {
     private Point point;
-    private Point[] pointArray1;
-    private Point[] pointArray2;
+    private Point[] pointArraySource = new Point[10];
+    private Point[] pointArrayNode;
 
     public Analizer() {
-        this.point = point;
-        pointArray1 = new Point[10];
         for (int i=0;i<10;i++){
-           point = new Point(i,i);
-        }
-        for (int i=0;i<10;i++){
-            pointArray1[i]=point;
+            point = new Point(Math.round(Math.random()*100), Math.round(Math.random()*100));
+            pointArraySource[i]=point;
         }
     }
 
@@ -38,7 +33,7 @@ public class Analizer {
 
     public void treePrint(){
         for (int i=0;i<10;i++){
-            out.println("x="+pointArray1[i].getX()+"y="+pointArray1[i].getY());
+            out.println("x="+ pointArraySource[i].getX()+" y="+ pointArraySource[i].getY());
         }
     }
 }

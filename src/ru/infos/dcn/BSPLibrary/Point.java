@@ -10,9 +10,9 @@ package ru.infos.dcn.BSPLibrary;
 public class Point {
     private double x;
     private double y;
-    public Point(double X, double Y){
-        x=X;
-        y=Y;
+    public Point(double x, double y){
+        this.x=x;
+        this.y=y;
     }
 
     public double getX() {
