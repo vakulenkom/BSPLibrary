@@ -1,5 +1,6 @@
 package ru.infos.dcn.BSPLibrary;
 
+import static java.lang.Math.*;
 import static java.lang.System.*;
 
 /**
@@ -13,27 +14,18 @@ public class Analyser {
     private Point point;
     private Point[] pointArraySource;
     private Point[] pointArrayNode;
+    public static final int N = 10;     //количество точек
 
     public Analyser() {
-        pointArraySource = new Point[10];
+        pointArraySource = new Point[N];
         for (int i=0;i<10;i++){
-            point = new Point(Math.round(Math.random() * 15), Math.round(Math.random() * 80));
+            point = new Point((int) round(random() * 15),(int) round(random() * 80));
             pointArraySource[i]=point;
         }
     }
 
     public Point[] getPointArraySource() {
         return pointArraySource;
-    }
-
-    public boolean analize(Point point1, Point point2){
-        double scalarComposition;
-        scalarComposition = point.getX()*point.getY()*Math.sin(point.getX());
-        return scalarComposition>0;
-    }
-
-    public void treeBuilding(){
-
     }
 
     public void treePrint(){

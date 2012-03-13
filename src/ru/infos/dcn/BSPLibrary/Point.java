@@ -8,9 +8,9 @@ package ru.infos.dcn.BSPLibrary;
  * To change this template use File | Settings | File Templates.
  */
 public class Point {
-    private double x;
-    private double y;
-    public Point(double x, double y){
+    private int x;
+    private int y;
+    public Point(int x, int y){
         this.x=x;
         this.y=y;
     }
