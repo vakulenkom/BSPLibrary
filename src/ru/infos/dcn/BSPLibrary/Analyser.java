@@ -28,9 +28,16 @@ public class Analyser {
         return pointArraySource;
     }
 
-    public void treePrint(){
+    public void divide(){
+        //while
+//        QuickSortX //returns Point[]
+//        divide
+//        QuickSortY
+    }
+
+    public void treePrint(Point[] points){
         for (int i=0;i<10;i++){
-            out.println("x= "+ pointArraySource[i].getX()+" y="+ pointArraySource[i].getY());
+            out.println("x= "+ points[i].getX()+" y="+ points[i].getY());
         }
     }
 }
