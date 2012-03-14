@@ -1,7 +1,5 @@
 package ru.infos.dcn.BSPLibrary;
 
-import static java.lang.System.out;
-
 /**
  * Created by IntelliJ IDEA.
  * User: mike
@@ -25,25 +23,27 @@ public class BinaryTree {
             if (node.left != null) {
                 insert(node.left, value, isLeft);
             } else {
-                out.println("\nInserted to left of node ");
+//                out.println("\nInserted to left of node ");
                 node.left = new Node(value);
             }
         } else {
             if (node.right != null) {
                 insert(node.right, value, isLeft);
             } else {
-                out.println("\nInserted to right of node ");
+//                out.println("\nInserted to right of node ");
                 node.right = new Node(value);
             }
         }
     }
-    public static void printInOrder(Node node) {
+    public static void printPreOrder(Node node) {
         if (node != null) {
-            printInOrder(node.left);
             Analyser.treePrint(node.value);
-            System.out.println("\nNode printed");
-            printInOrder(node.right);
+            System.out.println();
+            printPreOrder(node.left);
+            printPreOrder(node.right);
         }
     }
+
+
 }
 

@@ -14,7 +14,7 @@ public class Analyser {
     private Point point;
     private Point[] pointArraySource;
     private Point[] pointArrayNode;
-    public static final int N = 20;     //количество точек
+    public static final int N = 8;     //количество точек
 
     public Analyser() {
         pointArraySource = new Point[N];
