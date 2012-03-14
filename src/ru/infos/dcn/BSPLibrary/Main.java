@@ -13,8 +13,8 @@ public class Main {
         Analyser analyser = new Analyser();
         QuickSort quickSort = new QuickSort();
         analyser.treePrint(analyser.getPointArraySource());
-        Point[] sortPoints = quickSort.sort(analyser.getPointArraySource());
-        System.out.println("NEXT");
+        Point[] sortPoints = quickSort.sort(analyser.getPointArraySource(), QuickSort.PointType.y);
+        System.out.println("\nAfter sort");
         analyser.treePrint(sortPoints);
 
     }

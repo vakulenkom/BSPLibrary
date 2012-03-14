@@ -37,7 +37,7 @@ public class Analyser {
 
     public void treePrint(Point[] points){
         for (int i=0;i<10;i++){
-            out.println("x= "+ points[i].getX()+" y="+ points[i].getY());
+            out.print("("+ points[i].getX()+","+ points[i].getY()+")");
         }
     }
 }
