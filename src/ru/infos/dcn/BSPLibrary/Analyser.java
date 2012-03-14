@@ -14,11 +14,11 @@ public class Analyser {
     private Point point;
     private Point[] pointArraySource;
     private Point[] pointArrayNode;
-    public static final int N = 10;     //количество точек
+    public static final int N = 20;     //количество точек
 
     public Analyser() {
         pointArraySource = new Point[N];
-        for (int i=0;i<10;i++){
+        for (int i=0;i<N;i++){
             point = new Point((int) round(random() * 15),(int) round(random() * 80));
             pointArraySource[i]=point;
         }
@@ -36,7 +36,7 @@ public class Analyser {
     }
 
     public void treePrint(Point[] points){
-        for (int i=0;i<10;i++){
+        for (int i=0;i<N;i++){
             out.print("("+ points[i].getX()+","+ points[i].getY()+")");
         }
     }
