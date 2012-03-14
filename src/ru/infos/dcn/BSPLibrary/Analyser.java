@@ -35,8 +35,8 @@ public class Analyser {
 //        QuickSortY
     }
 
-    public void treePrint(Point[] points){
-        for (int i=0;i<N;i++){
+    public static void treePrint(Point[] points){
+        for (int i=0;i<points.length;i++){
             out.print("("+ points[i].getX()+","+ points[i].getY()+")");
         }
     }
