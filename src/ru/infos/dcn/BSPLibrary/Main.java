@@ -42,14 +42,14 @@ public class Main {
         System.arraycopy(sortPoints, 0, nodePoints1,0, leftNodeSize);
         insert(rootNode, nodePoints1, true);
         if (nodePoints1.length>1){
-            addToTree(rootNode,nodePoints1);
+            addToTree(rootNode.left,nodePoints1);
         }
 
         nodePoints2 = new Point[rightNodeSize];   //Почему это нужно делать каждый раз???!!!
         System.arraycopy(sortPoints, leftNodeSize, nodePoints2,0, rightNodeSize);
         insert(rootNode, nodePoints2, false);
         if (nodePoints2.length>1){
-            addToTree(rootNode,nodePoints2);
+            addToTree(rootNode.right,nodePoints2);
         }
     }
 }
