@@ -83,4 +83,5 @@ public class QuickSort  {
         points[i] = points[j];
         points[j] = temp;
     }
+    //todo посмотреть джава utile collection
 }

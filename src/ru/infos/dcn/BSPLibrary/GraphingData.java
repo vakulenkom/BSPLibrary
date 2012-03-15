@@ -13,7 +13,7 @@ public class GraphingData extends JPanel {
     Analyser analyser =new Analyser();
     int[] dataX;
     int[] dataY;
-    final int PAD = 20;
+    final int PAD = analyser.N;
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -89,11 +89,11 @@ public class GraphingData extends JPanel {
     }
 
     public static void main(String[] args) {
-//        JFrame f = new JFrame();
-//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        f.add(new GraphingData());
-//        f.setSize(400,400);
-//        f.setLocation(200,200);
-//        f.setVisible(true);
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(new GraphingData());
+        f.setSize(400,400);
+        f.setLocation(200,200);
+        f.setVisible(true);
     }
 }

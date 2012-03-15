@@ -15,7 +15,7 @@ public class Analyser {
     private Point[] pointArraySource;
     private Point[] pointArrayNode;
     public static final int N = 8;     //количество точек
-
+    //todo сделать чтение N из файла
     public Analyser() {
         pointArraySource = new Point[N];
         for (int i=0;i<N;i++){
@@ -36,9 +36,13 @@ public class Analyser {
     }
 
     public static void treePrint(Point[] points){
-        for (int i=0;i<points.length;i++){
-            out.print("("+ points[i].getX()+","+ points[i].getY()+")");
+        if (points != null){
+            for (int i=0;i<points.length;i++){
+                    out.print("("+ points[i].getX()+","+ points[i].getY()+")");
+            }
         }
     }
+    //todo проверить дана точка и радиус есть ли в этом радиусе точки (или в квадрате) публичный метод в публичном классе
+
 }
 

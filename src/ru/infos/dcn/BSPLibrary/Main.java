@@ -1,6 +1,7 @@
 package ru.infos.dcn.BSPLibrary;
 
 import static java.lang.Math.floor;
+import static java.lang.System.*;
 import static ru.infos.dcn.BSPLibrary.BinaryTree.*;
 
 /**
@@ -19,7 +20,7 @@ public class Main {
 
         Analyser.treePrint(analyser.getPointArraySource());
         Point[] sortPoints = quickSort.sort(analyser.getPointArraySource(), QuickSort.PointType.x);
-        System.out.println("\nAfter sort");
+        out.println("\nAfter sort");
         Analyser.treePrint(sortPoints);
 
         Node rootNode = new Node(analyser.getPointArraySource());
@@ -38,18 +39,23 @@ public class Main {
         Point[] nodePoints2;
 
         nodePoints1 = new Point[leftNodeSize];
-        System.out.println("size= "+leftNodeSize+" length="+nodePoints1.length);
-        System.arraycopy(sortPoints, 0, nodePoints1,0, leftNodeSize);
-        insert(rootNode, nodePoints1, true);
-        if (nodePoints1.length>1){
+        arraycopy(sortPoints, 0, nodePoints1, 0, leftNodeSize);
+        insert(rootNode, null, true);
+        if (nodePoints1.length>3){
             addToTree(rootNode.left,nodePoints1);
         }
+        else{
+            insert(rootNode, nodePoints1, true);
+        }
 
-        nodePoints2 = new Point[rightNodeSize];   //Почему это нужно делать каждый раз???!!!
-        System.arraycopy(sortPoints, leftNodeSize, nodePoints2,0, rightNodeSize);
-        insert(rootNode, nodePoints2, false);
-        if (nodePoints2.length>1){
+        nodePoints2 = new Point[rightNodeSize];
+        arraycopy(sortPoints, leftNodeSize, nodePoints2, 0, rightNodeSize);
+        insert(rootNode, null, false);
+        if (nodePoints2.length>3){
             addToTree(rootNode.right,nodePoints2);
+        }
+        else{
+            insert(rootNode, nodePoints2, true);
         }
     }
 }
