@@ -14,19 +14,21 @@ import static ru.infos.dcn.BSPLibrary.BinaryTree.*;
 public class Main {
     public static void main(String [ ] args)
     {
-        Analyser analyser = new Analyser();
+        Stucture stucture = new Stucture();
         QuickSort quickSort = new QuickSort();
 
 
-        Analyser.treePrint(analyser.getPointArraySource());
-        Point[] sortPoints = quickSort.sort(analyser.getPointArraySource(), QuickSort.PointType.x);
-        out.println("\nAfter sort");
-        Analyser.treePrint(sortPoints);
+        out.println("Random array:");
+        Stucture.treePrint(stucture.getPointArraySource());
+        Point[] sortPoints = quickSort.sort(stucture.getPointArraySource(), QuickSort.PointType.x);
+        out.println("Array after sort:");
+        Stucture.treePrint(sortPoints);
 
-        Node rootNode = new Node(analyser.getPointArraySource());
+        Node rootNode = new Node(stucture.getPointArraySource());
 
         addToTree(rootNode, sortPoints);
 
+        out.println("BSP print preorder:");
         printPreOrder(rootNode);
 
 

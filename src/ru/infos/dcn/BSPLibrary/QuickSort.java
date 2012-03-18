@@ -8,7 +8,7 @@ public class QuickSort  {
 
     public Point[] sort(Point[] points, PointType pointType) {
         //initialization from Points[] to int[]
-//        numbers = new int[Analyser.N];
+//        numbers = new int[Stucture.N];
 //        i=0;
 //        for (Point point: points){
 //            numbers[i]=point.getX();
@@ -20,7 +20,7 @@ public class QuickSort  {
 //        }
         this.pointType=pointType;
         this.points=points;
-        number =Analyser.N;
+        number = Stucture.N;
         quicksort(0, number - 1);
         return this.points;
     }

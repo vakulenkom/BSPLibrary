@@ -37,13 +37,11 @@ public class BinaryTree {
     }
     public static void printPreOrder(Node node) {
         if (node != null) {
-            Analyser.treePrint(node.value);
-            System.out.println();
+            Stucture.treePrint(node.value);
+//            System.out.println();
             printPreOrder(node.left);
             printPreOrder(node.right);
         }
     }
-
-
 }
 

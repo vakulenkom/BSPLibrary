@@ -1,4 +1,4 @@
-import ru.infos.dcn.BSPLibrary.Analyser;
+import ru.infos.dcn.BSPLibrary.Stucture;
 
 import java.awt.*;
 import java.awt.font.*;
@@ -10,10 +10,10 @@ public class GraphingData extends JPanel {
             21, 14, 18, 03, 86, 88, 74, 87, 54, 77,
             61, 55, 48, 50, 49, 36, 38, 27, 20, 18
     };
-    Analyser analyser =new Analyser();
+    Stucture stucture =new Stucture();
     int[] dataX;
     int[] dataY;
-    final int PAD = analyser.N;
+    final int PAD = Stucture.N;
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -64,9 +64,9 @@ public class GraphingData extends JPanel {
         dataX = new int[10];
         dataY = new int[10];
         for(int i = 0; i < 10; i++) {
-            dataX[i]=(int)analyser.getPointArraySource()[i].getX();
+            dataX[i]=(int)stucture.getPointArraySource()[i].getX();
             System.out.println("x"+i+"= "+dataX[i]);
-            dataY[i]=(int)analyser.getPointArraySource()[i].getY();
+            dataY[i]=(int)stucture.getPointArraySource()[i].getY();
             System.out.println("y"+i+"= "+dataY[i]);
         }
 
