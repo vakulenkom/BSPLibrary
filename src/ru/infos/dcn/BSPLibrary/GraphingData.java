@@ -47,7 +47,7 @@ public class GraphingData extends JPanel {
         float sw = (float)font.getStringBounds(s, frc).getWidth();
         float sx = (w - sw)/2;
         g2.drawString(s, sx, sy);
-        double xInc = (double)(w - 2*PAD)/(data.length-1);
+        double xInc = (double)(w - 2*PAD)/(stucture.N-1);
         double scale = (double)(h - 2*PAD)/getMax();
 
         // Draw lines.
@@ -81,7 +81,7 @@ public class GraphingData extends JPanel {
 
     private int getMax() {
         int max = -Integer.MAX_VALUE;
-        for(int i = 0; i < data.length; i++) {
+        for(int i = 0; i < stucture.N; i++) {
             if(data[i] > max)
                 max = data[i];
         }
