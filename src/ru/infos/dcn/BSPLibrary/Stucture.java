@@ -18,7 +18,7 @@ public class Stucture {
     public Stucture() {
         pointArraySource = new Point[N];
         for (int i=0;i<N;i++){
-            point = new Point((int) round(random() * 15),(int) round(random() * 80));
+            point = new Point((int) round(random() * 50),(int) round(random() * 50));
             pointArraySource[i]=point;
         }
     }

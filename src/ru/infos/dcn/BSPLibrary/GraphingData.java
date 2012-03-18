@@ -6,14 +6,8 @@ import java.awt.geom.*;
 import javax.swing.*;
 
 public class GraphingData extends JPanel {
-    int[] data = {
-            21, 14, 18, 03, 86, 88, 74, 87, 54, 77,
-            61, 55, 48, 50, 49, 36, 38, 27, 20, 18
-    };
     Stucture stucture =new Stucture();
-    int[] dataX;
-    int[] dataY;
-    final int PAD = Stucture.N;
+    final int PAD = 50;
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -47,8 +41,9 @@ public class GraphingData extends JPanel {
         float sw = (float)font.getStringBounds(s, frc).getWidth();
         float sx = (w - sw)/2;
         g2.drawString(s, sx, sy);
-        double xInc = (double)(w - 2*PAD)/(stucture.N-1);
-        double scale = (double)(h - 2*PAD)/getMax();
+        //Scale increments
+        double xInc = (double)(w - 2*PAD)/getMaxX();
+        double yInc = (double)(h - 2*PAD)/getMaxY();
 
         // Draw lines.
 //        g2.setPaint(Color.green.darker());
@@ -61,29 +56,46 @@ public class GraphingData extends JPanel {
 //        }
 
         //initialize data
-        dataX = new int[10];
-        dataY = new int[10];
-        for(int i = 0; i < 10; i++) {
-            dataX[i]=(int)stucture.getPointArraySource()[i].getX();
-            System.out.println("x"+i+"= "+dataX[i]);
-            dataY[i]=(int)stucture.getPointArraySource()[i].getY();
-            System.out.println("y"+i+"= "+dataY[i]);
-        }
+//        dataX = new int[stucture.N];
+//        dataY = new int[stucture.N];
+//        for(int i = 0; i < stucture.N; i++) {
+//            dataX[i]=(int)stucture.getPointArraySource()[i].getX();
+//            System.out.println("x"+i+"= "+dataX[i]);
+//            dataY[i]=(int)stucture.getPointArraySource()[i].getY();
+//            System.out.println("y"+i+"= "+dataY[i]);
+//        }
 
         // Mark data points.
-        g2.setPaint(Color.red);
-        for(int i = 0; i < 10; i++) {
-            double x = PAD + dataX[i]*xInc;             //х-координата точки
-            double y = h - PAD - scale*dataY[i];        //у-координата точки
+
+        for(int i = 0; i < Stucture.N; i++) {
+            g2.setPaint(Color.red);
+            double x = PAD + (int)stucture.getPointArraySource()[i].getX()*xInc;             //х-координата точки
+            double y = h - PAD - (int)stucture.getPointArraySource()[i].getY()*yInc;        //у-координата точки
             g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
+            // point label.
+            g2.setPaint(Color.black);
+            s ="("+stucture.getPointArraySource()[i].getX()+","+stucture.getPointArraySource()[i].getY()+")";
+            sy = (float) (y-2);
+            sw = (float)font.getStringBounds(s, frc).getWidth();
+            sx = (float) (x+1);
+            g2.drawString(s, sx, sy);
         }
+        Stucture.treePrint(stucture.getPointArraySource());
+    }
+    private int getMaxY() {
+        int max = -Integer.MAX_VALUE;
+        for(int i = 0; i < Stucture.N; i++) {
+            if((int)stucture.getPointArraySource()[i].getY() > max)
+                max = (int)stucture.getPointArraySource()[i].getY();
+        }
+        return max;
     }
 
-    private int getMax() {
+    private int getMaxX() {
         int max = -Integer.MAX_VALUE;
-        for(int i = 0; i < stucture.N; i++) {
-            if(data[i] > max)
-                max = data[i];
+        for(int i = 0; i < Stucture.N; i++) {
+            if((int)stucture.getPointArraySource()[i].getX() > max)
+                max = (int)stucture.getPointArraySource()[i].getX();
         }
         return max;
     }
@@ -92,8 +104,8 @@ public class GraphingData extends JPanel {
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.add(new GraphingData());
-        f.setSize(400,400);
-        f.setLocation(200,200);
+        f.setSize(800,800);
+        f.setLocation(400,400);
         f.setVisible(true);
     }
 }
