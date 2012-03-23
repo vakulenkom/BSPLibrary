@@ -1,5 +1,7 @@
 package ru.infos.dcn.BSPLibrary;
 
+import javax.swing.*;
+
 import static java.lang.Math.floor;
 import static java.lang.System.*;
 import static ru.infos.dcn.BSPLibrary.BinaryTree.*;
@@ -31,6 +33,13 @@ public class Main {
         out.println("BSP print preorder:");
         printPreOrder(rootNode);
 
+
+        JFrame f = new JFrame();
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.add(new GraphingData());
+        f.setSize(800,800);
+        f.setLocation(400,400);
+        f.setVisible(true);
 
     }
 

@@ -1,4 +1,4 @@
-import ru.infos.dcn.BSPLibrary.Stucture;
+package ru.infos.dcn.BSPLibrary;
 
 import java.awt.*;
 import java.awt.font.*;
@@ -80,7 +80,6 @@ public class GraphingData extends JPanel {
             sx = (float) (x+1);
             g2.drawString(s, sx, sy);
         }
-        Stucture.treePrint(stucture.getPointArraySource());
     }
     private int getMaxY() {
         int max = -Integer.MAX_VALUE;
@@ -98,14 +97,5 @@ public class GraphingData extends JPanel {
                 max = (int)stucture.getPointArraySource()[i].getX();
         }
         return max;
-    }
-
-    public static void main(String[] args) {
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new GraphingData());
-        f.setSize(800,800);
-        f.setLocation(400,400);
-        f.setVisible(true);
     }
 }
