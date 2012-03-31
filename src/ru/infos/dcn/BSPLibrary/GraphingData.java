@@ -13,6 +13,7 @@ public class GraphingData extends JPanel {
     Graphics2D g2;
     double xInc, yInc;
     int h;
+    int paintColor = 0;
 
     public GraphingData (Point[] points, BinaryTree.Node rootNode) {
         this.points = points;
@@ -73,7 +74,7 @@ public class GraphingData extends JPanel {
         
         //draw lines
 
-        g2.setPaint(Color.green.darker());
+//        g2.setPaint(Color.green.darker());
 //        g2.draw(new Rectangle(PAD+(int)xInc*15,h - PAD - (int)yInc*10,(int)xInc*5,(int)yInc*40));
         drawRectangles(rootNode);
     }
@@ -81,6 +82,25 @@ public class GraphingData extends JPanel {
     public void drawRectangles(BinaryTree.Node rootNode) {
         if (rootNode != null) {
             if (rootNode.value!=null)     {
+                paintColor = (paintColor + 1) % 5;
+                System.out.println(paintColor);
+                switch (paintColor){
+                    case 0:
+                        g2.setPaint(Color.orange.darker());
+                        break;
+                    case 1:
+                        g2.setPaint(Color.yellow.darker());
+                        break;
+                    case 2:
+                        g2.setPaint(Color.green.darker());
+                        break;
+                    case 3:
+                        g2.setPaint(Color.blue.darker());
+                        break;
+                    case 4:
+                        g2.setPaint(Color.magenta.darker());
+                        break;
+                }
                 g2.draw(new Rectangle(
                         (int)(PAD + (getMinX(rootNode.value) - 0.5)*xInc),
                         (int)(h - PAD - (getMaxY(rootNode.value) + 0.5)*yInc),
