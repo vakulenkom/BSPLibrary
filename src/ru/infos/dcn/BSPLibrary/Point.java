@@ -31,5 +31,4 @@ public class Point {
     public void setY(int y) {
         this.y = y;
     }
-    //todo сделать точки паблик, убрать геттеры и сеттеры
 }

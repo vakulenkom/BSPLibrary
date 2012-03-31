@@ -57,7 +57,6 @@ public class GraphingData extends JPanel {
         yInc = (double)(h - 2*PAD)/getMaxY(points);
 
         // Mark data points.
-
         for(int i = 0; i < Stucture.N; i++) {
             g2.setPaint(Color.red);
             double x = PAD + (int)points[i].getX()*xInc;             //х-координата точки
@@ -72,10 +71,7 @@ public class GraphingData extends JPanel {
             g2.drawString(s, sx, sy);
         }
         
-        //draw lines
-
-//        g2.setPaint(Color.green.darker());
-//        g2.draw(new Rectangle(PAD+(int)xInc*15,h - PAD - (int)yInc*10,(int)xInc*5,(int)yInc*40));
+        //draw rectangles
         drawRectangles(rootNode);
     }
 
@@ -83,7 +79,6 @@ public class GraphingData extends JPanel {
         if (rootNode != null) {
             if (rootNode.value!=null)     {
                 paintColor = (paintColor + 1) % 5;
-                System.out.println(paintColor);
                 switch (paintColor){
                     case 0:
                         g2.setPaint(Color.orange.darker());
