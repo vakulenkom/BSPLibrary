@@ -14,7 +14,7 @@ public class Stucture {
     private Point point;
     private Point[] pointArraySource;
     public static final int N = 12*4;     //количество точек
-    public static final int leafSize = 3; //размер листа
+    public static final int minLeafSize = 4; //размер листа
     //todo сделать чтение N из файла
     public Stucture() {
         pointArraySource = new Point[N];

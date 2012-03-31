@@ -58,10 +58,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="26" selection-start="435" selection-end="435" vertical-scroll-proportion="-3.1923077">
+            <state line="11" column="9" selection-start="218" selection-end="218" vertical-scroll-proportion="0.44836956">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,10 +69,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinaryTree.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BinaryTree.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="30" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.39086294">
+            <state line="53" column="47" selection-start="1602" selection-end="1602" vertical-scroll-proportion="-12.846154">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,7 +130,7 @@
       <file leaf-file-name="Stucture.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="33" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+            <state line="16" column="32" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -160,8 +160,8 @@
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" />
       </list>
     </option>
@@ -612,18 +612,6 @@
         <state line="54" column="25" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="5" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="85" column="45" selection-start="2776" selection-end="2821" vertical-scroll-proportion="0.0">
@@ -633,7 +621,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="33" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
+        <state line="16" column="32" selection-start="430" selection-end="430" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -647,18 +635,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="26" selection-start="435" selection-end="435" vertical-scroll-proportion="-3.1923077">
+        <state line="53" column="47" selection-start="1602" selection-end="1602" vertical-scroll-proportion="-12.846154">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="30" selection-start="1780" selection-end="1780" vertical-scroll-proportion="0.39086294">
+        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="5" selection-start="528" selection-end="528" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="9" selection-start="218" selection-end="218" vertical-scroll-proportion="0.44836956">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

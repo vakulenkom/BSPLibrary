@@ -41,7 +41,7 @@ public class BinaryTree {
         nodePoints1 = new Point[leftNodeSize];
         arraycopy(pointsArray, 0, nodePoints1, 0, leftNodeSize);
         insert(rootNode, null, true);
-        if (nodePoints1.length > Stucture.leafSize) {
+        if (nodePoints1.length > Stucture.minLeafSize *2) {
             recursiveTreeBuilding(rootNode.left, nodePoints1);
         }
         else{
@@ -51,7 +51,7 @@ public class BinaryTree {
         nodePoints2 = new Point[rightNodeSize];
         arraycopy(pointsArray, leftNodeSize, nodePoints2, 0, rightNodeSize);
         insert(rootNode, null, false);
-        if (nodePoints2.length > Stucture.leafSize) {
+        if (nodePoints2.length > Stucture.minLeafSize *2) {
             recursiveTreeBuilding(rootNode.right, nodePoints2);
         }
         else{
