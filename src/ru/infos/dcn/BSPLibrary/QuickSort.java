@@ -3,10 +3,11 @@ package ru.infos.dcn.BSPLibrary;
 public class QuickSort  {
     private int number;
     private Point[] points;
-    public enum PointType {x,y}
-    PointType pointType;
+//    public enum PointType {x,y}
+//    PointType pointType;
+    int pointType;         //0 = x, 1 = y
 
-    public Point[] sort(Point[] points, PointType pointType) {
+    public Point[] sort(Point[] points, int pointType) {
         //initialization from Points[] to int[]
 //        numbers = new int[Stucture.N];
 //        i=0;
@@ -20,7 +21,7 @@ public class QuickSort  {
 //        }
         this.pointType=pointType;
         this.points=points;
-        number = Stucture.N;
+        number = points.length;
         quicksort(0, number - 1);
         return this.points;
     }
@@ -28,7 +29,7 @@ public class QuickSort  {
     private void quicksort(int low, int high) {
         int i = low, j = high, pivot;
         // Get the pivot element from the middle of the list
-        if (pointType==PointType.x){
+        if (pointType==0){
             pivot = points[low + (high-low)/2].getX();
         }
         else{
@@ -39,7 +40,7 @@ public class QuickSort  {
         while (i <= j) {
             // If the current value from the left list is smaller then the pivot
             // element then get the next element from the left list
-            if (pointType==PointType.x){
+            if (pointType==0){
                 while (points[i].getX() < pivot) {
                     i++;
                 }

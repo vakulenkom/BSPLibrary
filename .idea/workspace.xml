@@ -58,10 +58,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GraphingData.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
+      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="14" selection-start="2854" selection-end="2854" vertical-scroll-proportion="0.18852459">
+            <state line="19" column="43" selection-start="468" selection-end="468" vertical-scroll-proportion="-0.10406091">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -69,11 +69,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
+      <file leaf-file-name="BinaryTree.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="57" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="78" column="54" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GraphingData.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="52" column="8" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -87,55 +100,28 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AnnotationDemo1.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar!/demo/AnnotationDemo1.class">
+      <file leaf-file-name="QuickSort.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+            <state line="17" column="41" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PeriodAxisDemo2.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar!/demo/PeriodAxisDemo2.class">
+      <file leaf-file-name="Point.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+            <state line="33" column="57" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="XYErrorRendererDemo2.class" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar!/demo/XYErrorRendererDemo2.class">
+      <file leaf-file-name="StackedXYBarChartFrame.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/StackedXYBarChartFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PeriodAxisDemo2.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar!/demo/PeriodAxisDemo2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="14" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BinaryTree.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="35" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0">
+            <state line="54" column="25" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -144,7 +130,7 @@
       <file leaf-file-name="Stucture.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="82" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0">
+            <state line="16" column="56" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -168,15 +154,15 @@
         <option value="$PROJECT_DIR$/src/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analyser.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/jGraphUsage.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/StackedXYBarChartFrame.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
         <option value="$PROJECT_DIR$/src/test/GraphingData.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
       </list>
     </option>
   </component>
@@ -216,7 +202,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -270,6 +255,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -280,7 +266,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
-    <property name="options.lastSelected" value="preferences.lookFeel" />
+    <property name="options.lastSelected" value="settings.github" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -510,16 +496,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938875" sideWeight="0.4939394" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24837133" sideWeight="0.45371777" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54628223" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24837133" sideWeight="0.67223066" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32776934" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -596,29 +582,9 @@
         <state line="78" column="17" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="44" selection-start="2798" selection-end="2798" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar!/demo/Animator.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="6" selection-start="135" selection-end="135" vertical-scroll-proportion="-2.4" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/StackedXYBarChartFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="25" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="57" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar!/demo/AnnotationDemo1.class">
@@ -641,24 +607,56 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/StackedXYBarChartFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="14" selection-start="107" selection-end="107" vertical-scroll-proportion="0.0" />
+        <state line="54" column="25" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="35" selection-start="1166" selection-end="1166" vertical-scroll-proportion="0.0" />
+        <state line="33" column="57" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="41" selection-start="524" selection-end="524" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="82" selection-start="611" selection-end="611" vertical-scroll-proportion="0.0" />
+        <state line="16" column="56" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="78" column="54" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="14" selection-start="2854" selection-end="2854" vertical-scroll-proportion="0.18852459">
+        <state line="52" column="8" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="43" selection-start="468" selection-end="468" vertical-scroll-proportion="-0.10406091">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -1,6 +1,7 @@
 package ru.infos.dcn.BSPLibrary;
 
 import javax.swing.*;
+import java.util.TreeSet;
 
 import static java.lang.Math.floor;
 import static java.lang.System.*;
@@ -17,18 +18,17 @@ public class Main {
     public static void main(String [ ] args)
     {
         Stucture stucture = new Stucture();
-        QuickSort quickSort = new QuickSort();
 
 
         out.println("Random array:");
         Stucture.treePrint(stucture.getPointArraySource());
-        Point[] sortPoints = quickSort.sort(stucture.getPointArraySource(), QuickSort.PointType.x);
-        out.println("Array after sort:");
-        Stucture.treePrint(sortPoints);
+//        Point[] sortPoints = QuickSort.sort(stucture.getPointArraySource(), QuickSort.PointType.x);
+//        out.println("Array after sort:");
+//        Stucture.treePrint(sortPoints);
 
         Node rootNode = new Node(stucture.getPointArraySource());
 
-        addToTree(rootNode, sortPoints);
+        BinaryTree bspTree = new BinaryTree(rootNode, stucture.getPointArraySource());
 
         out.println("BSP print preorder:");
         printPreOrder(rootNode);
@@ -36,37 +36,11 @@ public class Main {
 
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new GraphingData());
+        f.add(new GraphingData(stucture.getPointArraySource()));
         f.setSize(800,800);
         f.setLocation(400,400);
         f.setVisible(true);
+        f.setEnabled(true);
 
-    }
-
-    private static void addToTree(Node rootNode, Point[] sortPoints){
-        int leftNodeSize = (int)floor(sortPoints.length / 2);
-        int rightNodeSize = sortPoints.length-leftNodeSize;
-        Point[] nodePoints1;
-        Point[] nodePoints2;
-
-        nodePoints1 = new Point[leftNodeSize];
-        arraycopy(sortPoints, 0, nodePoints1, 0, leftNodeSize);
-        insert(rootNode, null, true);
-        if (nodePoints1.length>3){
-            addToTree(rootNode.left,nodePoints1);
-        }
-        else{
-            insert(rootNode, nodePoints1, true);
-        }
-
-        nodePoints2 = new Point[rightNodeSize];
-        arraycopy(sortPoints, leftNodeSize, nodePoints2, 0, rightNodeSize);
-        insert(rootNode, null, false);
-        if (nodePoints2.length>3){
-            addToTree(rootNode.right,nodePoints2);
-        }
-        else{
-            insert(rootNode, nodePoints2, true);
-        }
     }
 }
