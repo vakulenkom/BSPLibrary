@@ -78,7 +78,7 @@ public class BinaryTree {
     }
     public static void printPreOrder(Node node) {
         if (node != null) {
-            Stucture.treePrint(node.value);
+            Stucture.pointArrayPrint(node.value);
 //            System.out.println();
             printPreOrder(node.left);
             printPreOrder(node.right);

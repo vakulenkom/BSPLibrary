@@ -58,10 +58,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="43" selection-start="468" selection-end="468" vertical-scroll-proportion="-0.10406091">
+            <state line="36" column="71" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,7 +72,7 @@
       <file leaf-file-name="BinaryTree.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="78" column="54" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
+            <state line="85" column="9" selection-start="2352" selection-end="2604" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -80,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphingData.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GraphingData.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="8" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0">
+            <state line="87" column="84" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.91847825">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -130,7 +130,7 @@
       <file leaf-file-name="Stucture.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="56" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
+            <state line="23" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -159,10 +159,10 @@
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/StackedXYBarChartFrame.java" />
         <option value="$PROJECT_DIR$/src/test/GraphingData.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" />
-        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" />
       </list>
     </option>
   </component>
@@ -491,12 +491,13 @@
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16715543" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32776934" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938875" sideWeight="0.4939394" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -505,7 +506,6 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32776934" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -624,30 +624,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="56" selection-start="454" selection-end="454" vertical-scroll-proportion="0.0">
+        <state line="23" column="51" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="78" column="54" selection-start="2397" selection-end="2397" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="8" selection-start="1860" selection-end="1860" vertical-scroll-proportion="0.0">
+        <state line="85" column="9" selection-start="2352" selection-end="2604" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -656,7 +642,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="43" selection-start="468" selection-end="468" vertical-scroll-proportion="-0.10406091">
+        <state line="36" column="71" selection-start="1104" selection-end="1104" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="84" selection-start="3311" selection-end="3311" vertical-scroll-proportion="0.91847825">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

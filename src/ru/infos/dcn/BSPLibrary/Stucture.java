@@ -28,7 +28,7 @@ public class Stucture {
         return pointArraySource;
     }
 
-    public static void treePrint(Point[] points){
+    public static void pointArrayPrint(Point[] points){
         if (points != null){
             for (int i=0;i<points.length;i++){
                     out.print("("+ points[i].getX()+","+ points[i].getY()+")");

@@ -9,23 +9,27 @@ public class GraphingData extends JPanel {
 //    Stucture stucture =new Stucture();
     final int PAD = 50;
     Point[] points;
+    BinaryTree.Node rootNode;
+    Graphics2D g2;
+    double xInc, yInc;
+    int h;
 
-    public GraphingData (Point[] points) {
+    public GraphingData (Point[] points, BinaryTree.Node rootNode) {
         this.points = points;
+        this.rootNode = rootNode;
     }
 
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        Graphics2D g2 = (Graphics2D)g;
+        g2 = (Graphics2D)g;
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
         int w = getWidth();
-        int h = getHeight();
+        h = getHeight();
         // Draw ordinate.
         g2.draw(new Line2D.Double(PAD, PAD, PAD, h-PAD));
         // Draw abcissa.
         g2.draw(new Line2D.Double(PAD, h-PAD, w-PAD, h-PAD));
-//        g2.draw(new Rectangle(100,100,500,500));
         // Draw labels.
         Font font = g2.getFont();
         FontRenderContext frc = g2.getFontRenderContext();
@@ -48,10 +52,8 @@ public class GraphingData extends JPanel {
         float sx = (w - sw)/2;
         g2.drawString(s, sx, sy);
         //Scale increments
-        double xInc = (double)(w - 2*PAD)/getMaxX();
-        double yInc = (double)(h - 2*PAD)/getMaxY();
-
-//        g2.setPaint(Color.green.darker());
+        xInc = (double)(w - 2*PAD)/getMaxX(points);
+        yInc = (double)(h - 2*PAD)/getMaxY(points);
 
         // Mark data points.
 
@@ -68,22 +70,60 @@ public class GraphingData extends JPanel {
             sx = (float) (x+1);
             g2.drawString(s, sx, sy);
         }
+        
+        //draw lines
+
+        g2.setPaint(Color.green.darker());
+//        g2.draw(new Rectangle(PAD+(int)xInc*15,h - PAD - (int)yInc*10,(int)xInc*5,(int)yInc*40));
+        drawRectangles(rootNode);
     }
-    private int getMaxY() {
+
+    public void drawRectangles(BinaryTree.Node rootNode) {
+        if (rootNode != null) {
+            if (rootNode.value!=null)     {
+                g2.draw(new Rectangle(
+                        (int)(PAD + (getMinX(rootNode.value) - 0.5)*xInc),
+                        (int)(h - PAD - (getMaxY(rootNode.value) + 0.5)*yInc),
+                        (int)((getMaxX(rootNode.value) - getMinX(rootNode.value) + 1)*xInc),
+                        (int)((getMaxY(rootNode.value) - getMinY(rootNode.value) + 1)*yInc) + 6));
+            }
+            drawRectangles(rootNode.left);
+            drawRectangles(rootNode.right);
+        }
+    }
+    private int getMaxY(Point[] points) {
         int max = -Integer.MAX_VALUE;
-        for(int i = 0; i < Stucture.N; i++) {
+        for(int i = 0; i < points.length; i++) {
             if((int)points[i].getY() > max)
                 max = (int)points[i].getY();
         }
         return max;
     }
 
-    private int getMaxX() {
+    private int getMinY(Point[] points) {
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < points.length; i++) {
+            if((int)points[i].getY() < min)
+                min = (int)points[i].getY();
+        }
+        return min;
+    }
+
+    private int getMaxX(Point[] points) {
         int max = -Integer.MAX_VALUE;
-        for(int i = 0; i < Stucture.N; i++) {
+        for(int i = 0; i < points.length; i++) {
             if((int)points[i].getX() > max)
                 max = (int)points[i].getX();
         }
         return max;
+    }
+
+    private int getMinX(Point[] points) {
+        int min = Integer.MAX_VALUE;
+        for(int i = 0; i < points.length; i++) {
+            if((int)points[i].getX() < min)
+                min = (int)points[i].getX();
+        }
+        return min;
     }
 }

@@ -1,9 +1,7 @@
 package ru.infos.dcn.BSPLibrary;
 
 import javax.swing.*;
-import java.util.TreeSet;
 
-import static java.lang.Math.floor;
 import static java.lang.System.*;
 import static ru.infos.dcn.BSPLibrary.BinaryTree.*;
 
@@ -21,10 +19,10 @@ public class Main {
 
 
         out.println("Random array:");
-        Stucture.treePrint(stucture.getPointArraySource());
+        Stucture.pointArrayPrint(stucture.getPointArraySource());
 //        Point[] sortPoints = QuickSort.sort(stucture.getPointArraySource(), QuickSort.PointType.x);
 //        out.println("Array after sort:");
-//        Stucture.treePrint(sortPoints);
+//        Stucture.pointArrayPrint(sortPoints);
 
         Node rootNode = new Node(stucture.getPointArraySource());
 
@@ -36,7 +34,7 @@ public class Main {
 
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new GraphingData(stucture.getPointArraySource()));
+        f.add(new GraphingData(stucture.getPointArraySource(), rootNode));
         f.setSize(800,800);
         f.setLocation(400,400);
         f.setVisible(true);
