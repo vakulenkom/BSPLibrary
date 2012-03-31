@@ -57,9 +57,10 @@ public class BinaryTree {
         else{
             insert(rootNode, nodePoints2, true);
         }
+        rootNode.value = null;
     }
 
-    public static void insert(Node node, Point[] value, boolean isLeft) {
+    public void insert(Node node, Point[] value, boolean isLeft) {
         if (isLeft) {
             if (node.left != null) {
                 insert(node.left, value, isLeft);
