@@ -1,6 +1,8 @@
 package ru.infos.dcn.BSPLibrary;
 
 import java.awt.*;
+import java.awt.event.AWTEventListener;
+import java.awt.event.MouseEvent;
 import java.awt.font.*;
 import java.awt.geom.*;
 import javax.swing.*;
@@ -14,7 +16,8 @@ public class GraphingData extends JPanel {
     double xInc, yInc;
     int h;
     int paintColor = 0;
-
+    MouseEvent mouseEvent;
+    
     public GraphingData (Point[] points, BinaryTree.Node rootNode) {
         this.points = points;
         this.rootNode = rootNode;
@@ -73,6 +76,32 @@ public class GraphingData extends JPanel {
         
         //draw rectangles
         drawRectangles(rootNode);
+
+        //mouse interaction
+        g2.setPaint(Color.pink);
+        MouseInteraction();
+    }
+
+    private void MouseInteraction() {
+//        long eventMask = AWTEvent.MOUSE_MOTION_EVENT_MASK + AWTEvent.MOUSE_EVENT_MASK;
+        long eventMask = AWTEvent.MOUSE_EVENT_MASK;
+        Toolkit.getDefaultToolkit().addAWTEventListener( new AWTEventListener()
+        {
+            public void eventDispatched(AWTEvent e)
+            {
+                mouseEvent = (MouseEvent)e;
+//                if (mouseEvent.getID() )
+                System.out.println(mouseEvent.getID());
+                if (mouseEvent.getID()==501){
+                    g2.fill(new Ellipse2D.Double(mouseEvent.getX(), mouseEvent.getY(), 6, 6));
+//                    g2.fill(new Ellipse2D.Double(PAD + 10*(int)xInc,h - PAD - 10*(int)yInc, 40, 10));
+                    System.out.println("make ellipse!!!");
+                }
+
+                System.out.println(mouseEvent);
+            }
+        }, eventMask);
+        
     }
 
     public void drawRectangles(BinaryTree.Node rootNode) {
