@@ -30,10 +30,10 @@ public class QuickSort  {
         int i = low, j = high, pivot;
         // Get the pivot element from the middle of the list
         if (pointType==0){
-            pivot = points[low + (high-low)/2].getX();
+            pivot = points[low + (high-low)/2].getCoord()[0];
         }
         else{
-            pivot = points[low + (high-low)/2].getY();
+            pivot = points[low + (high-low)/2].getCoord()[1];
         }
 
         // Divide into two lists
@@ -41,22 +41,22 @@ public class QuickSort  {
             // If the current value from the left list is smaller then the pivot
             // element then get the next element from the left list
             if (pointType==0){
-                while (points[i].getX() < pivot) {
+                while (points[i].getCoord()[0] < pivot) {
                     i++;
                 }
                 // If the current value from the right list is larger then the pivot
                 // element then get the next element from the right list
-                while (points[j].getX() > pivot) {
+                while (points[j].getCoord()[0] > pivot) {
                     j--;
                 }
             }
             else{
-                while (points[i].getY() < pivot) {
+                while (points[i].getCoord()[1] < pivot) {
                     i++;
                 }
                 // If the current value from the right list is larger then the pivot
                 // element then get the next element from the right list
-                while (points[j].getY() > pivot) {
+                while (points[j].getCoord()[1] > pivot) {
                     j--;
                 }
             }

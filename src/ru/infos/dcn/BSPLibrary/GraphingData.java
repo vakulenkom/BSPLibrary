@@ -56,18 +56,18 @@ public class GraphingData extends JPanel {
         float sx = (w - sw)/2;
         g2.drawString(s, sx, sy);
         //Scale increments
-        xInc = (double)(w - 2*PAD)/getMaxX(points);
-        yInc = (double)(h - 2*PAD)/getMaxY(points);
+        xInc = (double)(w - 2*PAD)/ getMaxCoord(points, 0);
+        yInc = (double)(h - 2*PAD)/ getMaxCoord(points, 1);
 
         // Mark data points.
         for(int i = 0; i < Stucture.N; i++) {
             g2.setPaint(Color.red);
-            double x = PAD + (int)points[i].getX()*xInc;             //х-координата точки
-            double y = h - PAD - (int)points[i].getY()*yInc;        //у-координата точки
+            double x = PAD + (int)points[i].getCoord()[0]*xInc;             //х-координата точки
+            double y = h - PAD - (int)points[i].getCoord()[1]*yInc;        //у-координата точки
             g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
             // point label.
             g2.setPaint(Color.black);
-            s ="("+points[i].getX()+","+points[i].getY()+")";
+            s ="("+points[i].getCoord()[0]+","+points[i].getCoord()[1]+")";
             sy = (float) (y-2);
             sw = (float)font.getStringBounds(s, frc).getWidth();
             sx = (float) (x+1);
@@ -126,47 +126,30 @@ public class GraphingData extends JPanel {
                         break;
                 }
                 g2.draw(new Rectangle(
-                        (int)(PAD + (getMinX(rootNode.value) - 0.5)*xInc),
-                        (int)(h - PAD - (getMaxY(rootNode.value) + 0.5)*yInc),
-                        (int)((getMaxX(rootNode.value) - getMinX(rootNode.value) + 1)*xInc),
-                        (int)((getMaxY(rootNode.value) - getMinY(rootNode.value) + 1)*yInc) + 6));
+                        (int)(PAD + (getMinCoord(rootNode.value, 0) - 0.5)*xInc),
+                        (int)(h - PAD - (getMaxCoord(rootNode.value, 1) + 0.5)*yInc),
+                        (int)((getMaxCoord(rootNode.value, 0) - getMinCoord(rootNode.value, 0) + 1)*xInc),
+                        (int)((getMaxCoord(rootNode.value, 1) - getMinCoord(rootNode.value, 1) + 1)*yInc) + 6));
             }
             drawRectangles(rootNode.left);
             drawRectangles(rootNode.right);
         }
     }
-    private int getMaxY(Point[] points) {
+    private int getMaxCoord(Point[] points, int coord) {
+        //coord value means x or y
         int max = -Integer.MAX_VALUE;
         for(int i = 0; i < points.length; i++) {
-            if((int)points[i].getY() > max)
-                max = (int)points[i].getY();
+            if((int)points[i].getCoord()[coord] > max)
+                max = (int)points[i].getCoord()[coord];
         }
         return max;
     }
 
-    private int getMinY(Point[] points) {
+    private int getMinCoord(Point[] points, int coord) {
         int min = Integer.MAX_VALUE;
         for(int i = 0; i < points.length; i++) {
-            if((int)points[i].getY() < min)
-                min = (int)points[i].getY();
-        }
-        return min;
-    }
-
-    private int getMaxX(Point[] points) {
-        int max = -Integer.MAX_VALUE;
-        for(int i = 0; i < points.length; i++) {
-            if((int)points[i].getX() > max)
-                max = (int)points[i].getX();
-        }
-        return max;
-    }
-
-    private int getMinX(Point[] points) {
-        int min = Integer.MAX_VALUE;
-        for(int i = 0; i < points.length; i++) {
-            if((int)points[i].getX() < min)
-                min = (int)points[i].getX();
+            if((int)points[i].getCoord()[coord] < min)
+                min = (int)points[i].getCoord()[coord];
         }
         return min;
     }

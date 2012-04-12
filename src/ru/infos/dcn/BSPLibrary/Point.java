@@ -8,19 +8,14 @@ package ru.infos.dcn.BSPLibrary;
  * To change this template use File | Settings | File Templates.
  */
 public class Point {
-    final private int x;
-    final private int y;
+    final private int[] coord = new int[2];
 
     public Point(int x, int y){
-        this.x=x;
-        this.y=y;
-    }
+        this.coord[0] = x;
+        this.coord[1] = y;
+        }
 
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
-    }
+    public int[] getCoord(){
+        return coord;
+        }
 }

@@ -31,7 +31,7 @@ public class Stucture {
     public static void pointArrayPrint(Point[] points){
         if (points != null){
             for (int i=0;i<points.length;i++){
-                    out.print("("+ points[i].getX()+","+ points[i].getY()+")");
+                    out.print("("+ points[i].getCoord()[0]+","+ points[i].getCoord()[1]+")");
             }
             out.println();
         }
