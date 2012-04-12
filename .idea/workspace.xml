@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d09c037-fd0a-4b06-be5e-03d78a73d7ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/mike.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java" afterPath="" />
     </list>
     <ignored path="BSPLibrary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -97,15 +91,6 @@
         <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/awt/geom/Ellipse2D.class">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5" column="22" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Headers.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -510,7 +495,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1276" height="778" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -525,7 +510,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938875" sideWeight="0.4939394" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24837133" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24837133" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -658,11 +643,6 @@
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="36" selection-start="1167" selection-end="1167" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
