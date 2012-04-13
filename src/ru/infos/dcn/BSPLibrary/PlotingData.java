@@ -7,7 +7,7 @@ import java.awt.font.*;
 import java.awt.geom.*;
 import javax.swing.*;
 
-public class GraphingData extends JPanel {
+public class PlotingData extends JPanel {
 //    Stucture stucture =new Stucture();
     final int PAD = 50;
     Point[] points;
@@ -18,7 +18,7 @@ public class GraphingData extends JPanel {
     int paintColor = 0;
     MouseEvent mouseEvent;
     
-    public GraphingData (Point[] points, BinaryTree.Node rootNode) {
+    public PlotingData(Point[] points, BinaryTree.Node rootNode) {
         this.points = points;
         this.rootNode = rootNode;
     }

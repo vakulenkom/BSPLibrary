@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d09c037-fd0a-4b06-be5e-03d78a73d7ef" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/jfreechart-1.0.14-demo.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/gnujaxp.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/iText-2.1.5.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/jcommon-1.0.17.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/jfreechart-1.0.14-experimental.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/jfreechart-1.0.14-swt.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/jfreechart-1.0.14.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/junit.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/servlet.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/lib/swtgraphics2d.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/StackedXYBarChartFrame.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
     </list>
     <ignored path="BSPLibrary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,10 +80,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GraphingData.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
+      <file leaf-file-name="PlotingData.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="36" selection-start="1996" selection-end="1996" vertical-scroll-proportion="6.4615383">
+            <state line="58" column="36" selection-start="1993" selection-end="1993" vertical-scroll-proportion="2.172131">
               <folding />
             </state>
           </provider>
@@ -124,10 +116,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Stucture.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Stucture.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="42" selection-start="940" selection-end="940" vertical-scroll-proportion="0.65460527">
+            <state line="31" column="42" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -295,8 +287,8 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="GraphingData" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="ru.infos.dcn.BSPLibrary.GraphingData" />
+    <configuration default="false" name="PlotingData" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ru.infos.dcn.BSPLibrary.PlotingData" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -425,7 +417,7 @@
     </configuration>
     <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.GraphingData" />
+      <item index="1" class="java.lang.String" itemvalue="Application.PlotingData" />
       <item index="2" class="java.lang.String" itemvalue="Application.jGraphUsage" />
       <item index="3" class="java.lang.String" itemvalue="Application.XYErrorRendererDemo2" />
     </list>
@@ -483,7 +475,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="22" width="1276" height="778" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -499,8 +491,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24938875" sideWeight="0.4939394" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24837133" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24837133" sideWeight="0.6712329" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32876712" sideWeight="0.0" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -577,13 +569,6 @@
         <state line="5" column="22" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/GraphingData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="36" selection-start="1996" selection-end="1996" vertical-scroll-proportion="6.4615383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="22" selection-start="47" selection-end="56" vertical-scroll-proportion="0.0">
@@ -614,7 +599,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="42" selection-start="940" selection-end="940" vertical-scroll-proportion="0.65460527">
+        <state line="31" column="42" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="36" selection-start="1993" selection-end="1993" vertical-scroll-proportion="2.172131">
           <folding />
         </state>
       </provider>

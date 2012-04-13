@@ -34,7 +34,7 @@ public class Main {
 
         JFrame f = new JFrame();
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new GraphingData(stucture.getPointArraySource(), rootNode));
+        f.add(new PlotingData(stucture.getPointArraySource(), rootNode));
         f.setSize(800,800);
         f.setLocation(400,400);
         f.setVisible(true);
