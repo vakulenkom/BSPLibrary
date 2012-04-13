@@ -1,5 +1,8 @@
 package ru.infos.dcn.BSPLibrary;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 import static java.lang.Math.floor;
 import static java.lang.System.arraycopy;
 
@@ -33,6 +36,8 @@ public class BinaryTree {
     private void recursiveTreeBuilding(Node rootNode, Point[] pointsArray) {
         sortType = (sortType + 1) % 2;
         pointsArray = quickSort.sort(pointsArray, sortType);
+        int [] arr =new int [10];
+        Arrays.sort(arr);
         int leftNodeSize = (int)floor(pointsArray.length / 2);
         int rightNodeSize = pointsArray.length-leftNodeSize;
         Point[] nodePoints1;

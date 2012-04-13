@@ -11,7 +11,6 @@ import static java.lang.System.*;
  * To change this template use File | Settings | File Templates.
  */
 public class Stucture {
-    private Point point;
     private Point[] pointArraySource;
     public static final int N = 12*4;     //количество точек
     public static final int minLeafSize = 4; //размер листа
@@ -19,8 +18,7 @@ public class Stucture {
     public Stucture() {
         pointArraySource = new Point[N];
         for (int i=0;i<N;i++){
-            point = new Point((int) round(random() * 50),(int) round(random() * 50));
-            pointArraySource[i]=point;
+            pointArraySource[i] = new Point((int) round(random() * 50),(int) round(random() * 50));
         }
     }
 

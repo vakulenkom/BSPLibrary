@@ -7,7 +7,7 @@ package ru.infos.dcn.BSPLibrary;
  * Time: 12:57
  * To change this template use File | Settings | File Templates.
  */
-public class Point {
+public class Point{
     final private int[] coord = new int[2];
 
     public Point(int x, int y){
@@ -18,4 +18,10 @@ public class Point {
     public int[] getCoord(){
         return coord;
         }
+//    private class PointsComparator implements Comparable <Point>{
+//
+//        public int compareTo(Point point) {
+//            return 0;  //To change body of implemented methods use File | Settings | File Templates.
+//        }
+//    }
 }
