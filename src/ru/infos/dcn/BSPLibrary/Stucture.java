@@ -26,7 +26,7 @@ public class Stucture {
         return pointArraySource;
     }
 
-    public static void pointArrayPrint(Point[] points){
+    public static void printPointArray(Point[] points){
         if (points != null){
             for (int i=0;i<points.length;i++){
                     out.print("("+ points[i].getCoord()[0]+","+ points[i].getCoord()[1]+")");

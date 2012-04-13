@@ -1,7 +1,6 @@
 package ru.infos.dcn.BSPLibrary;
 
 import java.util.Arrays;
-import java.util.Collections;
 
 import static java.lang.Math.floor;
 import static java.lang.System.arraycopy;
@@ -84,7 +83,7 @@ public class BinaryTree {
     }
     public static void printPreOrder(Node node) {
         if (node != null) {
-            Stucture.pointArrayPrint(node.value);
+            Stucture.printPointArray(node.value);
 //            System.out.println();
             printPreOrder(node.left);
             printPreOrder(node.right);

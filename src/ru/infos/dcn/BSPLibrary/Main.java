@@ -19,10 +19,10 @@ public class Main {
 
 
         out.println("Random array:");
-        Stucture.pointArrayPrint(stucture.getPointArraySource());
+        Stucture.printPointArray(stucture.getPointArraySource());
 //        Point[] sortPoints = QuickSort.sort(stucture.getPointArraySource(), QuickSort.PointType.x);
 //        out.println("Array after sort:");
-//        Stucture.pointArrayPrint(sortPoints);
+//        Stucture.printPointArray(sortPoints);
 
         Node rootNode = new Node(stucture.getPointArraySource());
 
