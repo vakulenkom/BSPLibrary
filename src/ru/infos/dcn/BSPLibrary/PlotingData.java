@@ -19,6 +19,7 @@ public class PlotingData extends JPanel {
     private BinaryTree.Node rootNode;
     private Graphics2D g2;
     double xInc, yInc;
+    int h;
     private MouseEvent mouseEvent;
     int colorNum;  //номер цвета из массива цветов прямоугольника
     
@@ -44,7 +45,7 @@ public class PlotingData extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
         int w = getWidth();
-        int h = getHeight();
+        h = getHeight();
         // Draw ordinate.
         g2.draw(new Line2D.Double(PAD, PAD, PAD, h-PAD));
         // Draw abcissa.
