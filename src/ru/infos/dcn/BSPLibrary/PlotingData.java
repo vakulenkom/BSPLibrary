@@ -32,9 +32,9 @@ public class PlotingData extends JPanel {
         int blue = 0;
         for (int i=0; i<colorsNumber;i++) {
             pColor[i] = new Color(red,green,blue);
-            red = (int) round (random() * 294) % 256 ;
-            green = (int) round (random() * 652) % 256;
-            blue = (int) round (random() * 345) % 256;
+            red = (int) round (random() * 1000) % 256 ;
+            green = (int) round (random() * 1000) % 256;
+            blue = (int) round (random() * 1000) % 256;
         }
         colorNum = 0;
     }
