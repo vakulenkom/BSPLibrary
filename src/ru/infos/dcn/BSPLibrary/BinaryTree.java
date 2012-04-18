@@ -13,8 +13,10 @@ import static java.lang.System.arraycopy;
  * To change this template use File | Settings | File Templates.
  */
 public class BinaryTree {
-    private QuickSort quickSort;
-    int sortType=1;
+    int sortType=1;   //тип сортировки 1=у 0=х
+    //инициализация компораторов
+    PointsComparatorX pointsComparatorX = new PointsComparatorX();
+    PointsComparatorY pointsComparatorY = new PointsComparatorY();
 
 
 
@@ -28,15 +30,17 @@ public class BinaryTree {
         }
     }
     public BinaryTree (Node rootNode, Point[] pointsArray){
-        quickSort = new QuickSort();
         recursiveTreeBuilding(rootNode, pointsArray);
     }
 
     private void recursiveTreeBuilding(Node rootNode, Point[] pointsArray) {
-        sortType = (sortType + 1) % 2;
-        pointsArray = quickSort.sort(pointsArray, sortType);
-        int [] arr =new int [10];
-        Arrays.sort(arr);
+        sortType = (sortType + 1) % 2;  //сортировка по у или х
+        if (sortType == 0){
+            Arrays.sort(pointsArray, pointsComparatorX);
+        }
+        else if (sortType == 1){
+            Arrays.sort(pointsArray, pointsComparatorY);
+        }
         int leftNodeSize = (int)floor(pointsArray.length / 2);
         int rightNodeSize = pointsArray.length-leftNodeSize;
         Point[] nodePoints1;
