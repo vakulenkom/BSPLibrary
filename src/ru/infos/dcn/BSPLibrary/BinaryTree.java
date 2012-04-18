@@ -73,22 +73,20 @@ public class BinaryTree {
             if (node.left != null) {
                 insert(node.left, value, isLeft);
             } else {
-//                out.println("\nInserted to left of node ");
                 node.left = new Node(value);
             }
         } else {
             if (node.right != null) {
                 insert(node.right, value, isLeft);
             } else {
-//                out.println("\nInserted to right of node ");
                 node.right = new Node(value);
             }
         }
     }
+    //вывод дерева в консоль в порядке "PreOrder"
     public static void printPreOrder(Node node) {
         if (node != null) {
             Stucture.printPointArray(node.value);
-//            System.out.println();
             printPreOrder(node.left);
             printPreOrder(node.right);
         }

@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d09c037-fd0a-4b06-be5e-03d78a73d7ef" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PointsComparatorY.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/QuickSort.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/mike.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/mike.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java" afterPath="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java" />
     </list>
     <ignored path="BSPLibrary.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -75,19 +71,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BinaryTree.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="BinaryTree.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="32" selection-start="393" selection-end="393" vertical-scroll-proportion="-2.1751826">
-              <folding />
+            <state line="80" column="20" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlotingData.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PlotingData.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="30" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
+            <state line="28" column="43" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.5109489">
               <folding />
             </state>
           </provider>
@@ -132,7 +130,7 @@
       <file leaf-file-name="Stucture.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="42" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0">
+            <state line="20" column="70" selection-start="616" selection-end="636" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -151,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/QuickSort.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Headers.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Analyser.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/jGraphUsage.java" />
@@ -167,6 +164,7 @@
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PointsComparatorY.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Main.java" />
         <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java" />
+        <option value="$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java" />
       </list>
     </option>
   </component>
@@ -605,21 +603,9 @@
         <state line="78" column="17" selection-start="2831" selection-end="2831" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="30" selection-start="601" selection-end="601" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar!/java/awt/geom/Ellipse2D.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="22" selection-start="160" selection-end="160" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="42" selection-start="940" selection-end="940" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Point.java">
@@ -652,7 +638,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/BinaryTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="32" selection-start="393" selection-end="393" vertical-scroll-proportion="-2.1751826">
+        <state line="80" column="20" selection-start="2491" selection-end="2491" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/Stucture.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="70" selection-start="616" selection-end="636" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ru/infos/dcn/BSPLibrary/PlotingData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="43" selection-start="1007" selection-end="1007" vertical-scroll-proportion="0.5109489">
           <folding />
         </state>
       </provider>

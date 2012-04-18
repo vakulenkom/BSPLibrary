@@ -7,20 +7,35 @@ import java.awt.font.*;
 import java.awt.geom.*;
 import javax.swing.*;
 
+import static java.lang.Math.random;
+import static java.lang.Math.round;
+
 public class PlotingData extends JPanel {
 //    Stucture stucture =new Stucture();
     final int PAD = 50;
-    Point[] points;
-    BinaryTree.Node rootNode;
-    Graphics2D g2;
+    private static final int colorsNumber= Stucture.N / Stucture.minLeafSize; //количество цветов прямоугольников
+    private Color[] pColor = new Color[colorsNumber]; //массив цветов прямоугольника
+    private Point[] points;
+    private BinaryTree.Node rootNode;
+    private Graphics2D g2;
     double xInc, yInc;
-    int h;
-    int paintColor = 0;
-    MouseEvent mouseEvent;
+    private MouseEvent mouseEvent;
+    int colorNum;  //номер цвета из массива цветов прямоугольника
     
     public PlotingData(Point[] points, BinaryTree.Node rootNode) {
         this.points = points;
         this.rootNode = rootNode;
+        //задание рандомных цветов для прямоугольника
+        int red = 255;
+        int green = 0;
+        int blue = 0;
+        for (int i=0; i<colorsNumber;i++) {
+            pColor[i] = new Color(red,green,blue);
+            red = (int) round (random() * 294) % 256 ;
+            green = (int) round (random() * 652) % 256;
+            blue = (int) round (random() * 345) % 256;
+        }
+        colorNum = 0;
     }
 
     protected void paintComponent(Graphics g) {
@@ -29,7 +44,7 @@ public class PlotingData extends JPanel {
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
         int w = getWidth();
-        h = getHeight();
+        int h = getHeight();
         // Draw ordinate.
         g2.draw(new Line2D.Double(PAD, PAD, PAD, h-PAD));
         // Draw abcissa.
@@ -107,24 +122,8 @@ public class PlotingData extends JPanel {
     public void drawRectangles(BinaryTree.Node rootNode) {
         if (rootNode != null) {
             if (rootNode.value!=null)     {
-                paintColor = (paintColor + 1) % 5;
-                switch (paintColor){
-                    case 0:
-                        g2.setPaint(Color.orange.darker());
-                        break;
-                    case 1:
-                        g2.setPaint(Color.yellow.darker());
-                        break;
-                    case 2:
-                        g2.setPaint(Color.green.darker());
-                        break;
-                    case 3:
-                        g2.setPaint(Color.blue.darker());
-                        break;
-                    case 4:
-                        g2.setPaint(Color.magenta.darker());
-                        break;
-                }
+                g2.setPaint(pColor[colorNum]);
+                colorNum = (colorNum + 1) % colorsNumber;
                 g2.draw(new Rectangle(
                         (int)(PAD + (getMinCoord(rootNode.value, 0) - 0.5)*xInc),
                         (int)(h - PAD - (getMaxCoord(rootNode.value, 1) + 0.5)*yInc),
