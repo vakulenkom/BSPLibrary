@@ -2,8 +2,10 @@ package ru.infos.dcn.BSPLibrary;
 
 import javax.swing.*;
 
+import java.awt.*;
+
 import static java.lang.System.*;
-import static ru.infos.dcn.BSPLibrary.BinaryTree.*;
+import static ru.infos.dcn.BSPLibrary.BinaryTree2D.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,19 +25,26 @@ public class Main {
 
         Node rootNode = new Node(stucture.getPointArraySource());
 
-        BinaryTree bspTree = new BinaryTree(rootNode, stucture.getPointArraySource());
+        BinaryTree2D bspTree = new BinaryTree2D(rootNode, stucture.getPointArraySource());
 
         out.println("BSP print preorder:");
         printPreOrder(rootNode);
 
 
-        JFrame f = new JFrame();
-        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f.add(new PlotingData(stucture.getPointArraySource(), rootNode));
-        f.setSize(800,800);
-        f.setLocation(400,400);
-        f.setVisible(true);
-        f.setEnabled(true);
+        EventQueue.invokeLater(new Runnable() {  //Что это?
+            public void run() {
+                PaintFrame frame = new PaintFrame();
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+            }
+        });
+//        JFrame f = new JFrame();
+//        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        f.add(new PlotingData(stucture.getPointArraySource(), rootNode));
+//        f.setSize(800,800);
+//        f.setLocation(400,400);
+//        f.setVisible(true);
+//        f.setEnabled(true);
 
     }
 }

@@ -16,14 +16,14 @@ public class PlotingData extends JPanel {
     private static final int colorsNumber= Stucture.N / Stucture.minLeafSize; //количество цветов прямоугольников
     private Color[] pColor = new Color[colorsNumber]; //массив цветов прямоугольника
     private Point[] points;
-    private BinaryTree.Node rootNode;
+    private BinaryTree2D.Node rootNode;
     private Graphics2D g2;
     double xInc, yInc;
     int h;
     private MouseEvent mouseEvent;
     int colorNum;  //номер цвета из массива цветов прямоугольника
     
-    public PlotingData(Point[] points, BinaryTree.Node rootNode) {
+    public PlotingData(Point[] points, BinaryTree2D.Node rootNode) {
         this.points = points;
         this.rootNode = rootNode;
         //задание рандомных цветов для прямоугольника
@@ -120,7 +120,7 @@ public class PlotingData extends JPanel {
         
     }
 
-    public void drawRectangles(BinaryTree.Node rootNode) {
+    public void drawRectangles(BinaryTree2D.Node rootNode) {
         if (rootNode != null) {
             if (rootNode.value!=null)     {
                 g2.setPaint(pColor[colorNum]);

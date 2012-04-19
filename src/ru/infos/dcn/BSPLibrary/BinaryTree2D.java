@@ -12,13 +12,11 @@ import static java.lang.System.arraycopy;
  * Time: 20:01
  * To change this template use File | Settings | File Templates.
  */
-public class BinaryTree {
+public class BinaryTree2D {
     int sortType=1;   //тип сортировки 1=у 0=х
     //инициализация компораторов
     PointsComparatorX pointsComparatorX = new PointsComparatorX();
     PointsComparatorY pointsComparatorY = new PointsComparatorY();
-
-
 
     static class Node {
         Node left;
@@ -29,7 +27,8 @@ public class BinaryTree {
             this.value = value;
         }
     }
-    public BinaryTree (Node rootNode, Point[] pointsArray){
+
+    public BinaryTree2D(Node rootNode, Point[] pointsArray){
         recursiveTreeBuilding(rootNode, pointsArray);
     }
 
@@ -68,7 +67,7 @@ public class BinaryTree {
         rootNode.value = null;
     }
 
-    public void insert(Node node, Point[] value, boolean isLeft) {
+    private void insert(Node node, Point[] value, boolean isLeft) {
         if (isLeft) {
             if (node.left != null) {
                 insert(node.left, value, isLeft);
