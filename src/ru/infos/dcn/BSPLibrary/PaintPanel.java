@@ -35,7 +35,7 @@ class PaintPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         for (Point p : points) {
-            g.fillRect(p.getCoord()[0]-3, p.getCoord()[1]-3, 7, 7);
+            g.fillRect(p.coord[0]-3, p.coord[1]-3, 7, 7);
         }
     }
 }

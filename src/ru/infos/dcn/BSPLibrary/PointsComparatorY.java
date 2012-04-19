@@ -10,6 +10,6 @@ import java.util.Comparator;
  */
 public class PointsComparatorY implements Comparator<Point>{
     public int compare(Point p1, Point p2){
-        return p1.getCoord()[1] - p2.getCoord()[1];
+        return p1.coord[1] - p2.coord[1];
     }
 }

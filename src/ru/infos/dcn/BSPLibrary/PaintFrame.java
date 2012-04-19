@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
     class PaintFrame extends JFrame {
         public PaintFrame() {
-            setTitle("Paint Sample");
+            setTitle("BSP data plot");
             setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
             PaintPanel panel = new PaintPanel(new ArrayList<Point>());

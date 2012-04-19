@@ -78,12 +78,12 @@ public class PlotingData extends JPanel {
         // Mark data points.
         for(int i = 0; i < Stucture.N; i++) {
             g2.setPaint(Color.red);
-            double x = PAD + (int)points[i].getCoord()[0]*xInc;             //х-координата точки
-            double y = h - PAD - (int)points[i].getCoord()[1]*yInc;        //у-координата точки
+            double x = PAD + (int)points[i].coord[0]*xInc;             //х-координата точки
+            double y = h - PAD - (int)points[i].coord[1]*yInc;        //у-координата точки
             g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
             // point label.
             g2.setPaint(Color.black);
-            s ="("+points[i].getCoord()[0]+","+points[i].getCoord()[1]+")";
+            s ="("+points[i].coord[0]+","+points[i].coord[1]+")";
             sy = (float) (y-2);
             sw = (float)font.getStringBounds(s, frc).getWidth();
             sx = (float) (x+1);
@@ -139,8 +139,8 @@ public class PlotingData extends JPanel {
         //coord value means x or y
         int max = -Integer.MAX_VALUE;
         for(int i = 0; i < points.length; i++) {
-            if((int)points[i].getCoord()[coord] > max)
-                max = (int)points[i].getCoord()[coord];
+            if((int)points[i].coord[coord] > max)
+                max = (int)points[i].coord[coord];
         }
         return max;
     }
@@ -148,8 +148,8 @@ public class PlotingData extends JPanel {
     private int getMinCoord(Point[] points, int coord) {
         int min = Integer.MAX_VALUE;
         for(int i = 0; i < points.length; i++) {
-            if((int)points[i].getCoord()[coord] < min)
-                min = (int)points[i].getCoord()[coord];
+            if((int)points[i].coord[coord] < min)
+                min = (int)points[i].coord[coord];
         }
         return min;
     }

@@ -30,7 +30,7 @@ public class Stucture {
     public static void printPointArray(Point[] points){
         if (points != null){
             for (int i=0;i<points.length;i++){
-                    out.print("("+ points[i].getCoord()[0]+","+ points[i].getCoord()[1]+")");
+                    out.print("("+ points[i].coord[0]+","+ points[i].coord[1]+")");
             }
             out.println();
         }
