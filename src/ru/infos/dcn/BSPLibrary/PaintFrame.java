@@ -10,11 +10,11 @@ import java.util.ArrayList;
  * Time: 0:39
  */
     class PaintFrame extends JFrame {
-        public PaintFrame() {
+        public PaintFrame(Point[] points, BinaryTree2D.Node rootNode) {
             setTitle("BSP data plot");
             setSize(DEFAULT_WIDTH, DEFAULT_HEIGHT);
 
-            PaintPanel panel = new PaintPanel(new ArrayList<Point>());
+            PaintPanel panel = new PaintPanel(points, rootNode);
             add(panel);
         }
 

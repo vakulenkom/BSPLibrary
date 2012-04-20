@@ -17,13 +17,13 @@ import static ru.infos.dcn.BSPLibrary.BinaryTree2D.*;
 public class Main {
     public static void main(String [ ] args)
     {
-        Stucture stucture = new Stucture();
+        final Stucture stucture = new Stucture();
 
 
         out.println("Random array:");
         Stucture.printPointArray(stucture.getPointArraySource());
 
-        Node rootNode = new Node(stucture.getPointArraySource());
+        final Node rootNode = new Node(stucture.getPointArraySource());
 
         BinaryTree2D bspTree = new BinaryTree2D(rootNode, stucture.getPointArraySource());
 
@@ -33,7 +33,7 @@ public class Main {
 
         EventQueue.invokeLater(new Runnable() {  //Что это?
             public void run() {
-                PaintFrame frame = new PaintFrame();
+                PaintFrame frame = new PaintFrame(stucture.getPointArraySource(), rootNode);
                 frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 frame.setVisible(true);
             }
