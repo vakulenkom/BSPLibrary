@@ -1,5 +1,8 @@
 package ru.infos.dcn.BSPLibrary;
 
+import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import static java.lang.Math.floor;
@@ -12,12 +15,11 @@ import static java.lang.System.arraycopy;
  * Time: 20:01
  * To change this template use File | Settings | File Templates.
  */
-public class BinaryTree2D {
-    int sortType=1;   //тип сортировки 1=у 0=х
-    //инициализация компораторов
-    PointsComparatorX pointsComparatorX = new PointsComparatorX();
-    PointsComparatorY pointsComparatorY = new PointsComparatorY();
-
+public final class BinaryTree2D {
+    int sortType = 1;  //сортировка по у или х
+    final Node rootNode = new Node();
+//    ArrayList<Point> pointsInLeafs = new ArrayList<Point>();
+    Point[] sourcePoints;
     static class Node {
         Node left;
         Node right;
@@ -26,14 +28,25 @@ public class BinaryTree2D {
         public Node(Point[] value) {
             this.value = value;
         }
+
+        public Node() {
+        }
     }
 
-    public BinaryTree2D(Node rootNode, Point[] pointsArray){
+    public BinaryTree2D (Point[] points){
+        sourcePoints = points;  //потом сделать не копию по ссылке а копированием значений
+        this.makeBinaryTree2D(rootNode, points);
+    }
+
+    private void makeBinaryTree2D(Node rootNode, Point[] pointsArray){
         recursiveTreeBuilding(rootNode, pointsArray);
     }
 
     private void recursiveTreeBuilding(Node rootNode, Point[] pointsArray) {
-        sortType = (sortType + 1) % 2;  //сортировка по у или х
+        //инициализация компораторов
+        PointsComparatorX pointsComparatorX = new PointsComparatorX();
+        PointsComparatorY pointsComparatorY = new PointsComparatorY();
+        sortType = (sortType + 1) % 2;
         if (sortType == 0){
             Arrays.sort(pointsArray, pointsComparatorX);
         }
@@ -82,13 +95,50 @@ public class BinaryTree2D {
             }
         }
     }
+
+//    private void treeTraverse(Node node){
+//        if (node != null) {
+//            for (Point p : node.value){
+//                pointsInLeafs.add(p);
+//                treeTraverse(node.left);
+//                treeTraverse(node.right);
+//            }
+//        }
+//    }
     //вывод дерева в консоль в порядке "PreOrder"
-    public static void printPreOrder(Node node) {
+    private void printPreOrder(Node node) {
         if (node != null) {
             Stucture.printPointArray(node.value);
             printPreOrder(node.left);
             printPreOrder(node.right);
         }
     }
+
+    public void print(){
+        this.printPreOrder(rootNode);
+    }
+
+    public Node getBSPTree2DRootNode(){
+        return this.rootNode;
+    }
+
+    public Point[] getBSPTree2DPointsArray(){
+//        treeTraverse(this.rootNode);
+        return sourcePoints;
+    }
+
+    public void drawBSPTreeJavaGUI(){
+//        EventQueue.invokeLater(new Runnable() {  //Что это?
+//            public void run() {
+                PaintFrame frame = new PaintFrame(this );
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setVisible(true);
+//            }
+//        });
+    }
+
+//    public Point[] searchPointsForRectangle{
+//        return ;
+//    }
 }
 

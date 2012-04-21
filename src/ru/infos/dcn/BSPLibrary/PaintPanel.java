@@ -27,15 +27,15 @@ class PaintPanel extends JPanel {
     private static final int colorsNumber = Stucture.N / Stucture.minLeafSize; //количество цветов прямоугольников
     private Color[] pColor = new Color[colorsNumber]; //массив цветов прямоугольника
     private BinaryTree2D.Node rootNode;
-    private Graphics2D g2;
-    private double xInc, yInc;
+    private Graphics2D graphicContext2D;
+    private double xInc, yInc;    //растягивание точек по осям
     private int h;
     private MouseEvent mouseEvent;
     private int colorNum;  //номер цвета из массива цветов прямоугольника
 
-    public PaintPanel(Point[] pointsArrayForTreeData, BinaryTree2D.Node rootNode) {
-        this.pointsArrayForTreeData = pointsArrayForTreeData;
-        this.rootNode = rootNode;
+    public PaintPanel(BinaryTree2D bspTree) {
+        this.pointsArrayForTreeData = bspTree.getBSPTree2DPointsArray();
+        this.rootNode = bspTree.rootNode;
         //задание рандомных цветов для прямоугольника
         int red = 255;
         int green = 0;
@@ -82,18 +82,18 @@ class PaintPanel extends JPanel {
 
     @Override
     public void paintComponent(Graphics g) {
-        g2 = (Graphics2D) g;
-        g2.clearRect(0,0,1000,1000);
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+        graphicContext2D = (Graphics2D) g;
+        graphicContext2D.clearRect(0, 0, 1000, 1000);
+        graphicContext2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int w = getWidth();
         h = getHeight();
         // Draw ordinate.
-        g2.draw(new Line2D.Double(PAD, PAD, PAD, h-PAD));
+        graphicContext2D.draw(new Line2D.Double(PAD, PAD, PAD, h - PAD));
         // Draw abcissa.
-        g2.draw(new Line2D.Double(PAD, h-PAD, w-PAD, h-PAD));
+        graphicContext2D.draw(new Line2D.Double(PAD, h - PAD, w - PAD, h - PAD));
         // Draw labels.
-        Font font = g2.getFont();
-        FontRenderContext frc = g2.getFontRenderContext();
+        Font font = graphicContext2D.getFont();
+        FontRenderContext frc = graphicContext2D.getFontRenderContext();
         LineMetrics lm = font.getLineMetrics("0", frc);
         float sh = lm.getAscent() + lm.getDescent();
         // Ordinate label.
@@ -103,7 +103,7 @@ class PaintPanel extends JPanel {
             String letter = String.valueOf(s.charAt(i));
             float sw = (float)font.getStringBounds(letter, frc).getWidth();
             float sx = (PAD - sw)/2;
-            g2.drawString(letter, sx, sy);
+            graphicContext2D.drawString(letter, sx, sy);
             sy += sh;
         }
         // Abcissa label.
@@ -111,49 +111,51 @@ class PaintPanel extends JPanel {
         sy = h - PAD + (PAD - sh)/2 + lm.getAscent();
         float sw = (float)font.getStringBounds(s, frc).getWidth();
         float sx = (w - sw)/2;
-        g2.drawString(s, sx, sy);
+        graphicContext2D.drawString(s, sx, sy);
         //Scale increments
         xInc = (double)(w - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 0);
         yInc = (double)(h - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 1);
         //рисуем точки из дерева
         for (Point p : pointsArrayForTreeData) {
-            g2.setPaint(Color.red);
+            graphicContext2D.setPaint(Color.red);
             double x = PAD + (int)p.coord[0]*xInc;             //х-координата точки
             double y = h - PAD - (int)p.coord[1]*yInc;        //у-координата точки
-            g2.fill(new Ellipse2D.Double(x-2, y-2, 4, 4));
+            graphicContext2D.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
             // point label.
-            g2.setPaint(Color.black);
+            graphicContext2D.setPaint(Color.black);
             s ="("+p.coord[0]+","+p.coord[1]+")";
             sy = (float) (y-2);
             sw = (float)font.getStringBounds(s, frc).getWidth();
             sx = (float) (x+1);
-            g2.drawString(s, sx, sy);
+            graphicContext2D.drawString(s, sx, sy);
         }
         //рисуем точки для мыши
         for (Point p : pointsArrayForMouseAction) {
-            g2.fillRect(p.coord[0]-3, p.coord[1]-3, 7, 7);
+            graphicContext2D.fillRect(p.coord[0] - 3, p.coord[1] - 3, 7, 7);
         }
         if (pointsArrayForMouseAction.size()==2)  {
-            g2.draw( new Rectangle (
+            graphicContext2D.draw(new Rectangle(
                     pointsArrayForMouseAction.get(0).coord[0],
                     pointsArrayForMouseAction.get(0).coord[1],
-                    pointsArrayForMouseAction.get(1).coord[0]-pointsArrayForMouseAction.get(0).coord[0],
-                    pointsArrayForMouseAction.get(1).coord[1]-pointsArrayForMouseAction.get(0).coord[1]));
+                    pointsArrayForMouseAction.get(1).coord[0] - pointsArrayForMouseAction.get(0).coord[0],
+                    pointsArrayForMouseAction.get(1).coord[1] - pointsArrayForMouseAction.get(0).coord[1]));
             pointsArrayForMouseAction.clear();
         }
         //рисуем прямоугольники
+
+        colorNum = 0;
         drawRectangles(rootNode);
     }
     public void drawRectangles(BinaryTree2D.Node rootNode) {
         if (rootNode != null) {
             if (rootNode.value!=null)     {
-                g2.setPaint(pColor[colorNum]);
+                graphicContext2D.setPaint(pColor[colorNum]);
                 colorNum = (colorNum + 1) % colorsNumber;
-                g2.draw(new Rectangle(
-                        (int)(PAD + (getMinCoord(rootNode.value, 0) - 0.5)*xInc),
-                        (int)(h - PAD - (getMaxCoord(rootNode.value, 1) + 0.5)*yInc),
-                        (int)((getMaxCoord(rootNode.value, 0) - getMinCoord(rootNode.value, 0) + 1)*xInc),
-                        (int)((getMaxCoord(rootNode.value, 1) - getMinCoord(rootNode.value, 1) + 1)*yInc) + 6));
+                graphicContext2D.draw(new Rectangle(
+                        (int) (PAD + (getMinCoord(rootNode.value, 0) - 0.5) * xInc),
+                        (int) (h - PAD - (getMaxCoord(rootNode.value, 1) + 0.5) * yInc),
+                        (int) ((getMaxCoord(rootNode.value, 0) - getMinCoord(rootNode.value, 0) + 1) * xInc),
+                        (int) ((getMaxCoord(rootNode.value, 1) - getMinCoord(rootNode.value, 1) + 1) * yInc) + 6));
             }
             drawRectangles(rootNode.left);
             drawRectangles(rootNode.right);
