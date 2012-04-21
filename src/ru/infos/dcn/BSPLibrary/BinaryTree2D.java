@@ -5,8 +5,9 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static java.lang.Math.floor;
+import static java.lang.Math.*;
 import static java.lang.System.arraycopy;
+import static java.lang.System.out;
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,9 +17,10 @@ import static java.lang.System.arraycopy;
  * To change this template use File | Settings | File Templates.
  */
 public final class BinaryTree2D {
-    int sortType = 1;  //сортировка по у или х
+    //инициализация компораторов
+    PointsComparatorX pointsComparatorX = new PointsComparatorX();
+    PointsComparatorY pointsComparatorY = new PointsComparatorY();
     final Node rootNode = new Node();
-//    ArrayList<Point> pointsInLeafs = new ArrayList<Point>();
     Point[] sourcePoints;
     static class Node {
         Node left;
@@ -39,14 +41,11 @@ public final class BinaryTree2D {
     }
 
     private void makeBinaryTree2D(Node rootNode, Point[] pointsArray){
-        recursiveTreeBuilding(rootNode, pointsArray);
+        recursiveTreeBuilding(rootNode, pointsArray, 1);
     }
 
-    private void recursiveTreeBuilding(Node rootNode, Point[] pointsArray) {
-        //инициализация компораторов
-        PointsComparatorX pointsComparatorX = new PointsComparatorX();
-        PointsComparatorY pointsComparatorY = new PointsComparatorY();
-        sortType = (sortType + 1) % 2;
+    private void recursiveTreeBuilding(Node rootNode, Point[] pointsArray, int sortType) {
+        sortType = sortType % 2;
         if (sortType == 0){
             Arrays.sort(pointsArray, pointsComparatorX);
         }
@@ -61,21 +60,20 @@ public final class BinaryTree2D {
         nodePoints1 = new Point[leftNodeSize];
         arraycopy(pointsArray, 0, nodePoints1, 0, leftNodeSize);
         insert(rootNode, null, true);
-        if (nodePoints1.length > Stucture.minLeafSize *2) {
-            recursiveTreeBuilding(rootNode.left, nodePoints1);
+        if (nodePoints1.length > Stucture.minLeafSize * 2) {
+            recursiveTreeBuilding(rootNode.left, nodePoints1, sortType + 1);
         }
         else{
             insert(rootNode, nodePoints1, true);
         }
-
         nodePoints2 = new Point[rightNodeSize];
         arraycopy(pointsArray, leftNodeSize, nodePoints2, 0, rightNodeSize);
         insert(rootNode, null, false);
-        if (nodePoints2.length > Stucture.minLeafSize *2) {
-            recursiveTreeBuilding(rootNode.right, nodePoints2);
+        if (nodePoints2.length > Stucture.minLeafSize * 2) {
+            recursiveTreeBuilding(rootNode.right, nodePoints2, sortType + 1);
         }
         else{
-            insert(rootNode, nodePoints2, true);
+            insert(rootNode, nodePoints2, false);
         }
         rootNode.value = null;
     }
