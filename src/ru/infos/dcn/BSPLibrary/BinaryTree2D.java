@@ -106,7 +106,7 @@ public final class BinaryTree2D {
     //вывод дерева в консоль в порядке "PreOrder"
     private void printPreOrder(Node node) {
         if (node != null) {
-            Stucture.printPointArray(node.value);
+            this.printPointArray(node.value);
             printPreOrder(node.left);
             printPreOrder(node.right);
         }
@@ -133,6 +133,15 @@ public final class BinaryTree2D {
                 frame.setVisible(true);
 //            }
 //        });
+    }
+
+    private static void printPointArray(Point[] points){
+        if (points != null){
+            for (int i=0;i<points.length;i++){
+                out.print("("+ points[i].coord[0]+","+ points[i].coord[1]+")");
+            }
+            out.println();
+        }
     }
 
 //    public Point[] searchPointsForRectangle{

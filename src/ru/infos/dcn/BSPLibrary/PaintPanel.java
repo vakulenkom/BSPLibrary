@@ -83,7 +83,7 @@ class PaintPanel extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         graphicContext2D = (Graphics2D) g;
-        graphicContext2D.clearRect(0, 0, 1000, 1000);
+        graphicContext2D.clearRect(0, 0, this.getWidth(), this.getHeight());
         graphicContext2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         int w = getWidth();
         h = getHeight();
