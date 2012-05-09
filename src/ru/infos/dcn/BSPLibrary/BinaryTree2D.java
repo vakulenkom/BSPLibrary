@@ -26,6 +26,8 @@ public final class BinaryTree2D {
         Node left;
         Node right;
         Point[] value;
+        int sortType;
+        int edgeCoord;
 
         public Node(Point[] value) {
             this.value = value;
@@ -36,12 +38,12 @@ public final class BinaryTree2D {
     }
 
     public BinaryTree2D (Point[] points){
-        sourcePoints = points;  //потом сделать не копию по ссылке а копированием значений
+        sourcePoints = points;  //потом сделать не копию по ссылке а копированием значений?
         this.makeBinaryTree2D(rootNode, points);
     }
 
     private void makeBinaryTree2D(Node rootNode, Point[] pointsArray){
-        recursiveTreeBuilding(rootNode, pointsArray, 1);
+        recursiveTreeBuilding(rootNode, pointsArray, 0);
     }
 
     private void recursiveTreeBuilding(Node rootNode, Point[] pointsArray, int sortType) {
@@ -59,36 +61,40 @@ public final class BinaryTree2D {
 
         nodePoints1 = new Point[leftNodeSize];
         arraycopy(pointsArray, 0, nodePoints1, 0, leftNodeSize);
-        insert(rootNode, null, true);
         if (nodePoints1.length > Stucture.minLeafSize * 2) {
+            insert(rootNode, null, true, sortType, nodePoints1[nodePoints1.length - 1].coord[sortType]);
             recursiveTreeBuilding(rootNode.left, nodePoints1, sortType + 1);
         }
         else{
-            insert(rootNode, nodePoints1, true);
+            insert(rootNode, nodePoints1, true, sortType, nodePoints1[nodePoints1.length - 1].coord[sortType]);
         }
         nodePoints2 = new Point[rightNodeSize];
         arraycopy(pointsArray, leftNodeSize, nodePoints2, 0, rightNodeSize);
-        insert(rootNode, null, false);
         if (nodePoints2.length > Stucture.minLeafSize * 2) {
+            insert(rootNode, null, false, sortType, nodePoints2[0].coord[sortType]);
             recursiveTreeBuilding(rootNode.right, nodePoints2, sortType + 1);
         }
         else{
-            insert(rootNode, nodePoints2, false);
+            insert(rootNode, nodePoints2, false, sortType, nodePoints1[0].coord[sortType]);
         }
         rootNode.value = null;
     }
 
-    private void insert(Node node, Point[] value, boolean isLeft) {
+    private void insert(Node node, Point[] value, boolean isLeft, int sortType, int edgeCoord) {
         if (isLeft) {
             if (node.left != null) {
-                insert(node.left, value, isLeft);
+                insert(node.left, value, isLeft, sortType, edgeCoord);
             } else {
+                node.sortType = sortType;
+                node.edgeCoord = edgeCoord;
                 node.left = new Node(value);
             }
         } else {
             if (node.right != null) {
-                insert(node.right, value, isLeft);
+                insert(node.right, value, isLeft, sortType, edgeCoord);
             } else {
+                node.sortType = sortType;
+                node.edgeCoord = edgeCoord;
                 node.right = new Node(value);
             }
         }
@@ -103,17 +109,52 @@ public final class BinaryTree2D {
 //            }
 //        }
 //    }
-    //вывод дерева в консоль в порядке "PreOrder"
-    private void printPreOrder(Node node) {
-        if (node != null) {
+
+    /* Function to print level order traversal a tree*/
+    int height(Node node)
+    {
+        if (node==null)
+            return 0;
+        else
+        {
+            /* compute the height of each subtree */
+            int lheight = height(node.left);
+            int rheight = height(node.right);
+
+            /* use the larger one */
+            if (lheight > rheight)
+                return(lheight+1);
+            else return(rheight+1);
+        }
+    }
+
+    void printLevelOrder(Node root)
+    {
+        int h = height(root);
+        int i;
+        for(i=1; i<=h; i++)
+            printGivenLevel(root, i);
+    }
+
+    /* Print nodes at a given level */
+    void printGivenLevel(Node node, int level)
+    {
+        if(node == null)
+            return;
+        if(level == 1){
             this.printPointArray(node.value);
-            printPreOrder(node.left);
-            printPreOrder(node.right);
+            out.println("sortType = "+node.sortType);
+            out.println("edgeCoordinate = "+node.edgeCoord);
+        }
+        else if (level > 1)
+        {
+            printGivenLevel(node.left, level-1);
+            printGivenLevel(node.right, level-1);
         }
     }
 
     public void print(){
-        this.printPreOrder(rootNode);
+        this.printLevelOrder(rootNode);
     }
 
     public Node getBSPTree2DRootNode(){
@@ -144,6 +185,9 @@ public final class BinaryTree2D {
         }
     }
 
+    private void findRegions (Point[] rectanglePoints){
+
+    }
 //    public Point[] searchPointsForRectangle{
 //        return ;
 //    }

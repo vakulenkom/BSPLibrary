@@ -12,6 +12,7 @@ import static java.lang.System.out;
 public class Point{
     final public int[] coord = new int[2];
 
+
     public Point(int x, int y){
         this.coord[0] = x;
         this.coord[1] = y;
