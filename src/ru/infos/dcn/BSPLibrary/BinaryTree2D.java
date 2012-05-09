@@ -1,8 +1,6 @@
 package ru.infos.dcn.BSPLibrary;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 import static java.lang.Math.*;
@@ -27,7 +25,8 @@ public final class BinaryTree2D {
         Node right;
         Point[] value;
         int sortType;
-        int edgeCoord;
+        int edgeCoordMin;
+        int edgeCoordMax;
 
         public Node(Point[] value) {
             this.value = value;
@@ -86,16 +85,16 @@ public final class BinaryTree2D {
                 insert(node.left, value, isLeft, sortType, edgeCoord);
             } else {
                 node.left = new Node(value);
-                node.left.sortType = sortType;
-                node.left.edgeCoord = edgeCoord;
+                node.sortType = sortType;
+                node.edgeCoordMin = edgeCoord;
             }
         } else {
             if (node.right != null) {
                 insert(node.right, value, isLeft, sortType, edgeCoord);
             } else {
                 node.right = new Node(value);
-                node.right.sortType = sortType;
-                node.right.edgeCoord = edgeCoord;
+                node.sortType = sortType;
+                node.edgeCoordMax = edgeCoord;
             }
         }
     }
@@ -133,7 +132,7 @@ public final class BinaryTree2D {
         int h = height(root);
         int i;
         for(i=1; i<=h; i++){
-            out.println("\nlevelNumber = "+i);
+            out.println("\nlevelNumber = " + i);
             printGivenLevel(root, i);
         }
     }
@@ -145,8 +144,9 @@ public final class BinaryTree2D {
             return;
         if(level == 1){
             this.printPointArray(node.value);
-            out.println("sortType = "+node.sortType);
-            out.println("edgeCoordinate = "+node.edgeCoord);
+            out.println("sortType = " + node.sortType);
+            out.println("edgeCoordinate1 = " + node.edgeCoordMin);
+            out.println("edgeCoordinate2 = "+node.edgeCoordMax);
         }
         else if (level > 1)
         {
@@ -187,9 +187,34 @@ public final class BinaryTree2D {
         }
     }
 
-    private void findPoint (Point[] rectanglePoints){
-        if (rectanglePoints[0].coord[this.rootNode.sortType] > this.rootNode.edgeCoord){
-                   //сделать edge1 и edge2
+    private void findPoint (Point[] rectanglePoints, Node rootNode){
+        int rectCoordNW = rectanglePoints[0].coord[rootNode.sortType];
+        int rectCoordSE = rectanglePoints[0].coord[rootNode.sortType];
+        if (rectCoordNW <= this.rootNode.edgeCoordMin){
+            if (rectCoordSE <= this.rootNode.edgeCoordMin){
+                findPoint(rectanglePoints, rootNode.left);  //1 scenario
+            }
+            else{
+                if (rectCoordSE<= this.rootNode.edgeCoordMax) {
+                    // 5 scenario
+                }
+                else {
+                    // 2 scenario
+                }
+            }
+        }
+        else{
+            if (rectCoordNW <= this.rootNode.edgeCoordMax){
+                if (rectCoordSE<= this.rootNode.edgeCoordMax){
+                    // 4 scenario
+                }
+                else{
+                    // 6 scenario
+                }
+            }
+            else{
+                //3 scenario
+            }
         }
     }
 //    public Point[] searchPointsForRectangle{
