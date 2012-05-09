@@ -187,8 +187,10 @@ public final class BinaryTree2D {
         }
     }
 
-    private void findRegions (Point[] rectanglePoints){
-
+    private void findPoint (Point[] rectanglePoints){
+        if (rectanglePoints[0].coord[this.rootNode.sortType] > this.rootNode.edgeCoord){
+                   //сделать edge1 и edge2
+        }
     }
 //    public Point[] searchPointsForRectangle{
 //        return ;
