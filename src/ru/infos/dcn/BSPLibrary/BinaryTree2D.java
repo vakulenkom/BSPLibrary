@@ -71,11 +71,11 @@ public final class BinaryTree2D {
         nodePoints2 = new Point[rightNodeSize];
         arraycopy(pointsArray, leftNodeSize, nodePoints2, 0, rightNodeSize);
         if (nodePoints2.length > Stucture.minLeafSize * 2) {
-            insert(rootNode, null, false, sortType, nodePoints2[0].coord[sortType]);
+            insert(rootNode, null, false, sortType, pointsArray[leftNodeSize].coord[sortType]);
             recursiveTreeBuilding(rootNode.right, nodePoints2, sortType + 1);
         }
         else{
-            insert(rootNode, nodePoints2, false, sortType, nodePoints1[0].coord[sortType]);
+            insert(rootNode, nodePoints2, false, sortType, pointsArray[leftNodeSize].coord[sortType]);
         }
         rootNode.value = null;
     }
@@ -85,17 +85,17 @@ public final class BinaryTree2D {
             if (node.left != null) {
                 insert(node.left, value, isLeft, sortType, edgeCoord);
             } else {
-                node.sortType = sortType;
-                node.edgeCoord = edgeCoord;
                 node.left = new Node(value);
+                node.left.sortType = sortType;
+                node.left.edgeCoord = edgeCoord;
             }
         } else {
             if (node.right != null) {
                 insert(node.right, value, isLeft, sortType, edgeCoord);
             } else {
-                node.sortType = sortType;
-                node.edgeCoord = edgeCoord;
                 node.right = new Node(value);
+                node.right.sortType = sortType;
+                node.right.edgeCoord = edgeCoord;
             }
         }
     }
@@ -132,8 +132,10 @@ public final class BinaryTree2D {
     {
         int h = height(root);
         int i;
-        for(i=1; i<=h; i++)
+        for(i=1; i<=h; i++){
+            out.println("\nlevelNumber = "+i);
             printGivenLevel(root, i);
+        }
     }
 
     /* Print nodes at a given level */
