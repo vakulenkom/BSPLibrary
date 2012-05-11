@@ -139,6 +139,10 @@ class PaintPanel extends JPanel {
                     pointsArrayForMouseAction.get(0).coord[1],
                     pointsArrayForMouseAction.get(1).coord[0] - pointsArrayForMouseAction.get(0).coord[0],
                     pointsArrayForMouseAction.get(1).coord[1] - pointsArrayForMouseAction.get(0).coord[1]));
+            Point[] rectPoints = new Point[2];
+            rectPoints[0] = pointsArrayForMouseAction.get(0);
+            rectPoints[1] = pointsArrayForMouseAction.get(1);
+            bspTree.findPointsInRectangle(rectPoints);
             pointsArrayForMouseAction.clear();
         }
         //рисуем прямоугольники
