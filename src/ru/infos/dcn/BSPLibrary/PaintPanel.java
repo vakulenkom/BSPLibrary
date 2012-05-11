@@ -32,10 +32,12 @@ class PaintPanel extends JPanel {
     private int h;
     private MouseEvent mouseEvent;
     private int colorNum;  //номер цвета из массива цветов прямоугольника
+    private BinaryTree2D bspTree;
 
     public PaintPanel(BinaryTree2D bspTree) {
         this.pointsArrayForTreeData = bspTree.getBSPTree2DPointsArray();
         this.rootNode = bspTree.rootNode;
+        this.bspTree = bspTree;
         //задание рандомных цветов для прямоугольника
         int red = 255;
         int green = 0;
@@ -119,7 +121,7 @@ class PaintPanel extends JPanel {
         for (Point p : pointsArrayForTreeData) {
             graphicContext2D.setPaint(Color.red);
             double x = PAD + (int)p.coord[0]*xInc;             //х-координата точки
-            double y = h - PAD - (int)p.coord[1]*yInc;        //у-координата точки
+            double y = h - PAD - (int)p.coord[1]*yInc;         //у-координата точки
             graphicContext2D.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
             // point label.
             graphicContext2D.setPaint(Color.black);
@@ -140,10 +142,15 @@ class PaintPanel extends JPanel {
                     pointsArrayForMouseAction.get(1).coord[0] - pointsArrayForMouseAction.get(0).coord[0],
                     pointsArrayForMouseAction.get(1).coord[1] - pointsArrayForMouseAction.get(0).coord[1]));
             Point[] rectPoints = new Point[2];
-            rectPoints[0] = pointsArrayForMouseAction.get(0);
-            rectPoints[1] = pointsArrayForMouseAction.get(1);
+            rectPoints[0] = new Point();
+            rectPoints[1] = new Point();
+            rectPoints[0].coord[0] = Math.round((int)((pointsArrayForMouseAction.get(0).coord[0] - PAD) / xInc));
+            rectPoints[0].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(0).coord[1] - PAD + h) / yInc));
+            rectPoints[1].coord[0] = Math.round((int) ((pointsArrayForMouseAction.get(1).coord[0] - PAD) / xInc));
+            rectPoints[1].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(1).coord[1] - PAD + h) / yInc));
             bspTree.findPointsInRectangle(rectPoints);
             pointsArrayForMouseAction.clear();
+            System.out.println();
         }
         //рисуем прямоугольники
 

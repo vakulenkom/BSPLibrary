@@ -12,7 +12,7 @@ import static java.lang.System.*;
  */
 public class Stucture {
     private Point[] pointArraySource;
-    public static final int N = 16;     //количество точек
+    public static final int N = 18;     //количество точек
 //    public static final int N = 1000000;
     public static final int minLeafSize = 2; //минимальный размер листа
     //todo сделать чтение N из файла

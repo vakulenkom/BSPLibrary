@@ -16,7 +16,10 @@ public class Point{
     public Point(int x, int y){
         this.coord[0] = x;
         this.coord[1] = y;
-        }
+    }
+    public Point(){
+    }
+
     @Override
     public boolean equals(Object p) {
         if (p == this)
