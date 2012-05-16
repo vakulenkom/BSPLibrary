@@ -63,7 +63,7 @@ public final class BinaryTree2D {
         arraycopy(pointsArray, 0, nodePoints1, 0, leftNodeSize);
         if (nodePoints1.length > Stucture.minLeafSize * 2) {
             insert(rootNode, null, true, sortType, nodePoints1[nodePoints1.length - 1].coord[sortType]);
-            recursiveTreeBuilding(rootNode.left, nodePoints1, sortType + 1);
+            recursiveTreeBuilding(rootNode.left, nodePoints1, sortType);
         }
         else{
             insert(rootNode, nodePoints1, true, sortType, nodePoints1[nodePoints1.length - 1].coord[sortType]);
@@ -72,7 +72,7 @@ public final class BinaryTree2D {
         arraycopy(pointsArray, leftNodeSize, nodePoints2, 0, rightNodeSize);
         if (nodePoints2.length > Stucture.minLeafSize * 2) {
             insert(rootNode, null, false, sortType, pointsArray[leftNodeSize].coord[sortType]);
-            recursiveTreeBuilding(rootNode.right, nodePoints2, sortType + 1);
+            recursiveTreeBuilding(rootNode.right, nodePoints2, sortType);
         }
         else{
             insert(rootNode, nodePoints2, false, sortType, pointsArray[leftNodeSize].coord[sortType]);
@@ -199,52 +199,55 @@ public final class BinaryTree2D {
     }
 
     private boolean findPointsInRectanglePrivate(Point[] rectanglePoints, Node rootNode){
+//        int rectCoordNW = rectanglePoints[rootNode.sortType].coord[rootNode.sortType];
         int rectCoordNW = rectanglePoints[0].coord[rootNode.sortType];
+//        int rectCoordSE = rectanglePoints[(rootNode.sortType + 1) % 2 ].coord[rootNode.sortType];
         int rectCoordSE = rectanglePoints[1].coord[rootNode.sortType];
         if (rootNode.right != null || rootNode.left != null){
-            if (rectCoordNW <= this.rootNode.edgeCoordMin){
-                if (rectCoordSE <= this.rootNode.edgeCoordMin){
-                    findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
+            if (rectCoordNW < rootNode.edgeCoordMin){
+                if (rectCoordSE <= rootNode.edgeCoordMin){
                     out.println("1 scenario");
+                    findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
                     //1 scenario
                 }
                 else{
-                    if (rectCoordSE<= this.rootNode.edgeCoordMax) {
-                        rectanglePoints[1].coord[rootNode.sortType] = this.rootNode.edgeCoordMin;
-                        findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
+                    if (rectCoordSE< rootNode.edgeCoordMax) {
                         out.println("5 scenario");
+                        rectanglePoints[1].coord[rootNode.sortType] = rootNode.edgeCoordMin;
+                        findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                         //5 scenario
                     }
                     else {
-                        Point[] newRectPoints;
-                        newRectPoints = rectanglePoints;
-                        newRectPoints[0].coord[rootNode.sortType] = this.rootNode.edgeCoordMin;
-                        findPointsInRectanglePrivate(newRectPoints, rootNode.left);
-                        newRectPoints = rectanglePoints;
-                        newRectPoints[1].coord[rootNode.sortType] = this.rootNode.edgeCoordMax;
-                        findPointsInRectanglePrivate(newRectPoints, rootNode.right);
                         out.println("2 scenario");
+                        Point[] newRectPoints;
+                        int missCoord = rectanglePoints[1].coord[rootNode.sortType];
+                        newRectPoints = rectanglePoints;
+                        newRectPoints[1].coord[rootNode.sortType] = rootNode.edgeCoordMin;
+                        findPointsInRectanglePrivate(newRectPoints, rootNode.left);
+                        newRectPoints[0].coord[rootNode.sortType] = rootNode.edgeCoordMax;
+                        newRectPoints[1].coord[rootNode.sortType] = missCoord;
+                        findPointsInRectanglePrivate(newRectPoints, rootNode.right);
                         // 2 scenario
                     }
                 }
             }
             else{
-                if (rectCoordNW <= this.rootNode.edgeCoordMax){
-                    if (rectCoordSE<= this.rootNode.edgeCoordMax){
+                if (rectCoordNW < rootNode.edgeCoordMax){
+                    if (rectCoordSE< rootNode.edgeCoordMax){
                         out.println("4 scenario");
                         return false; //no points in rectangle
                         // 4 scenario
                     }
                     else{
-                        rectanglePoints[0].coord[rootNode.sortType] = this.rootNode.edgeCoordMax;
-                        findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                         out.println("6 scenario");
+                        rectanglePoints[0].coord[rootNode.sortType] = rootNode.edgeCoordMax;
+                        findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                         // 6 scenario
                     }
                 }
                 else{
-                    findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                     out.println("3 scenario");
+                    findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                     //3 scenario
                 }
             }

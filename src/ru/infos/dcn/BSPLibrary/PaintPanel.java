@@ -28,8 +28,9 @@ class PaintPanel extends JPanel {
     private Color[] pColor = new Color[colorsNumber]; //массив цветов прямоугольника
     private BinaryTree2D.Node rootNode;
     private Graphics2D graphicContext2D;
-    private double xInc, yInc;    //растягивание точек по осям
+    private double xCoordinateCoeff, yCoordinateCoeff;    //растягивание точек по осям
     private int h;
+    private int w;
     private MouseEvent mouseEvent;
     private int colorNum;  //номер цвета из массива цветов прямоугольника
     private BinaryTree2D bspTree;
@@ -87,7 +88,7 @@ class PaintPanel extends JPanel {
         graphicContext2D = (Graphics2D) g;
         graphicContext2D.clearRect(0, 0, this.getWidth(), this.getHeight());
         graphicContext2D.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-        int w = getWidth();
+        w = getWidth();
         h = getHeight();
         // Draw ordinate.
         graphicContext2D.draw(new Line2D.Double(PAD, PAD, PAD, h - PAD));
@@ -115,13 +116,13 @@ class PaintPanel extends JPanel {
         float sx = (w - sw)/2;
         graphicContext2D.drawString(s, sx, sy);
         //Scale increments
-        xInc = (double)(w - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 0);
-        yInc = (double)(h - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 1);
+        xCoordinateCoeff = (double)(w - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 0);
+        yCoordinateCoeff = (double)(h - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 1);
         //рисуем точки из дерева
         for (Point p : pointsArrayForTreeData) {
             graphicContext2D.setPaint(Color.red);
-            double x = PAD + (int)p.coord[0]*xInc;             //х-координата точки
-            double y = h - PAD - (int)p.coord[1]*yInc;         //у-координата точки
+            double x = PAD + (int)p.coord[0]* xCoordinateCoeff;             //х-координата точки
+            double y = h - PAD - (int)p.coord[1]* yCoordinateCoeff;         //у-координата точки
             graphicContext2D.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
             // point label.
             graphicContext2D.setPaint(Color.black);
@@ -144,10 +145,10 @@ class PaintPanel extends JPanel {
             Point[] rectPoints = new Point[2];
             rectPoints[0] = new Point();
             rectPoints[1] = new Point();
-            rectPoints[0].coord[0] = Math.round((int)((pointsArrayForMouseAction.get(0).coord[0] - PAD) / xInc));
-            rectPoints[0].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(0).coord[1] - PAD + h) / yInc));
-            rectPoints[1].coord[0] = Math.round((int) ((pointsArrayForMouseAction.get(1).coord[0] - PAD) / xInc));
-            rectPoints[1].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(1).coord[1] - PAD + h) / yInc));
+            rectPoints[0].coord[0] = Math.round((int)((pointsArrayForMouseAction.get(0).coord[0] - PAD) / xCoordinateCoeff));
+            rectPoints[0].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(0).coord[1] - PAD + h) / yCoordinateCoeff));
+            rectPoints[1].coord[0] = Math.round((int) ((pointsArrayForMouseAction.get(1).coord[0] - PAD) / xCoordinateCoeff));
+            rectPoints[1].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(1).coord[1] - PAD + h) / yCoordinateCoeff));
             bspTree.findPointsInRectangle(rectPoints);
             pointsArrayForMouseAction.clear();
             System.out.println();
@@ -163,10 +164,26 @@ class PaintPanel extends JPanel {
                 graphicContext2D.setPaint(pColor[colorNum]);
                 colorNum = (colorNum + 1) % colorsNumber;
                 graphicContext2D.draw(new Rectangle(
-                        (int) (PAD + (getMinCoord(rootNode.value, 0) - 0.5) * xInc),
-                        (int) (h - PAD - (getMaxCoord(rootNode.value, 1) + 0.5) * yInc),
-                        (int) ((getMaxCoord(rootNode.value, 0) - getMinCoord(rootNode.value, 0) + 1) * xInc),
-                        (int) ((getMaxCoord(rootNode.value, 1) - getMinCoord(rootNode.value, 1) + 1) * yInc) + 6));
+                        (int) (PAD + (getMinCoord(rootNode.value, 0) - 0.2) * xCoordinateCoeff),
+                        (int) (h - PAD - (getMaxCoord(rootNode.value, 1) + 0.2) * yCoordinateCoeff),
+                        (int) ((getMaxCoord(rootNode.value, 0) - getMinCoord(rootNode.value, 0) + 0.5) * xCoordinateCoeff),
+                        (int) ((getMaxCoord(rootNode.value, 1) - getMinCoord(rootNode.value, 1) + 0.5) * yCoordinateCoeff) + 1));
+            }
+            else{
+                graphicContext2D.setPaint(pColor[colorNum]);
+                colorNum = (colorNum + 1) % colorsNumber;
+                if (rootNode.sortType == 0){
+                    graphicContext2D.drawLine((int)(PAD + rootNode.edgeCoordMin * xCoordinateCoeff), PAD,
+                            (int)(PAD + rootNode.edgeCoordMin * xCoordinateCoeff), h - PAD);
+                    graphicContext2D.drawLine((int)(PAD + rootNode.edgeCoordMax * xCoordinateCoeff), PAD,
+                            (int)(PAD + rootNode.edgeCoordMax * xCoordinateCoeff), h - PAD);
+                }
+                else {
+                    graphicContext2D.drawLine(PAD,h - PAD - (int)(rootNode.edgeCoordMin * yCoordinateCoeff) ,
+                            w - PAD, h - PAD - (int)(rootNode.edgeCoordMin * yCoordinateCoeff));
+                    graphicContext2D.drawLine(PAD,h - PAD - (int)(rootNode.edgeCoordMax * yCoordinateCoeff) ,
+                            w - PAD, h - PAD - (int)(rootNode.edgeCoordMax * yCoordinateCoeff));
+                }
             }
             drawRectangles(rootNode.left);
             drawRectangles(rootNode.right);

@@ -10,7 +10,7 @@ import static java.lang.System.out;
  * To change this template use File | Settings | File Templates.
  */
 public class Point{
-    final public int[] coord = new int[2];
+    public int[] coord = new int[2];
 
 
     public Point(int x, int y){
