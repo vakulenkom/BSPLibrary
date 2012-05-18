@@ -31,7 +31,6 @@ class PaintPanel extends JPanel {
     private double xCoordinateCoeff, yCoordinateCoeff;    //растягивание точек по осям
     private int h;
     private int w;
-    private MouseEvent mouseEvent;
     private int colorNum;  //номер цвета из массива цветов прямоугольника
     private BinaryTree2D bspTree;
 
@@ -119,19 +118,7 @@ class PaintPanel extends JPanel {
         xCoordinateCoeff = (double)(w - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 0);
         yCoordinateCoeff = (double)(h - 2*PAD)/ getMaxCoord(pointsArrayForTreeData, 1);
         //рисуем точки из дерева
-        for (Point p : pointsArrayForTreeData) {
-            graphicContext2D.setPaint(Color.red);
-            double x = PAD + (int)p.coord[0]* xCoordinateCoeff;             //х-координата точки
-            double y = h - PAD - (int)p.coord[1]* yCoordinateCoeff;         //у-координата точки
-            graphicContext2D.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
-            // point label.
-            graphicContext2D.setPaint(Color.black);
-            s ="("+p.coord[0]+","+p.coord[1]+")";
-            sy = (float) (y-2);
-            sw = (float)font.getStringBounds(s, frc).getWidth();
-            sx = (float) (x+1);
-            graphicContext2D.drawString(s, sx, sy);
-        }
+        drawPointsWithColor(Color.blue, pointsArrayForTreeData);
         //рисуем точки для мыши
         for (Point p : pointsArrayForMouseAction) {
             graphicContext2D.fillRect(p.coord[0] - 3, p.coord[1] - 3, 7, 7);
@@ -149,7 +136,8 @@ class PaintPanel extends JPanel {
             rectPoints[0].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(0).coord[1] - PAD + h) / yCoordinateCoeff));
             rectPoints[1].coord[0] = Math.round((int) ((pointsArrayForMouseAction.get(1).coord[0] - PAD) / xCoordinateCoeff));
             rectPoints[1].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(1).coord[1] - PAD + h) / yCoordinateCoeff));
-            bspTree.findPointsInRectangle(rectPoints);
+            ArrayList<Point> foundedPoints = bspTree.findPointsInRectangle(rectPoints);
+            drawPointsWithColor(Color.red, arrayList2Array(foundedPoints));
             pointsArrayForMouseAction.clear();
             System.out.println();
         }
@@ -158,6 +146,32 @@ class PaintPanel extends JPanel {
         colorNum = 0;
         drawRectangles(rootNode);
     }
+
+    private Point[] arrayList2Array(ArrayList<Point> points){
+        Point[] newPoints = new Point[points.size()];
+        for (int i=0; i < newPoints.length; i++){
+            newPoints[i] = points.get(i);
+        }
+        return newPoints;
+    }
+    private void drawPointsWithColor(Color color, Point[] points) {
+        String s;
+        float sy;
+        float sx;
+        for (Point p : points) {
+            graphicContext2D.setPaint(color);
+            double x = PAD + (int)p.coord[0]* xCoordinateCoeff;             //х-координата точки
+            double y = h - PAD - (int)p.coord[1]* yCoordinateCoeff;         //у-координата точки
+            graphicContext2D.fill(new Ellipse2D.Double(x - 2, y - 2, 4, 4));
+            // point label.
+            graphicContext2D.setPaint(Color.black);
+            s ="("+p.coord[0]+","+p.coord[1]+")";
+            sy = (float) (y-2);
+            sx = (float) (x+1);
+            graphicContext2D.drawString(s, sx, sy);
+        }
+    }
+
     public void drawRectangles(BinaryTree2D.Node rootNode) {
         if (rootNode != null) {
             if (rootNode.value!=null)     {

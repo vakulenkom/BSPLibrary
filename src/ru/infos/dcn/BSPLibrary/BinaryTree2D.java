@@ -21,6 +21,7 @@ public final class BinaryTree2D {
     PointsComparatorY pointsComparatorY = new PointsComparatorY();
     final Node rootNode = new Node();
     Point[] sourcePoints;
+    private ArrayList<Point> pointsFoundInRectangle = new ArrayList<Point>();
     static class Node {
         Node left;
         Node right;
@@ -192,13 +193,14 @@ public final class BinaryTree2D {
         out.println("point = ("+ point.coord[0]+","+ point.coord[1]+")");
     }
 
-    public boolean findPointsInRectangle (Point[] rectanglePoints){
+    public ArrayList<Point> findPointsInRectangle (Point[] rectanglePoints){
         out.print("Finding points in rectangle: ");
+        pointsFoundInRectangle.clear();
         BinaryTree2D.printPointArray(rectanglePoints);
         return this.findPointsInRectanglePrivate(rectanglePoints, this.rootNode);
     }
 
-    private boolean findPointsInRectanglePrivate(Point[] rectanglePoints, Node rootNode){
+    private ArrayList<Point> findPointsInRectanglePrivate(Point[] rectanglePoints, Node rootNode){
 
 //        int rectCoordNW = rectanglePoints[rootNode.sortType].coord[rootNode.sortType];
 //        int rectCoordSE = rectanglePoints[(rootNode.sortType + 1) % 2 ].coord[rootNode.sortType];
@@ -210,27 +212,30 @@ public final class BinaryTree2D {
                 case 0:
                     if (rectCoordNW < rootNode.edgeCoordMin){
                         if (rectCoordSE <= rootNode.edgeCoordMin){
-                            out.println("1 scenario");
-                            findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
+//                            out.println("1 scenario");
+                            return findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
                             //1 scenario
                         }
                         else{
                             if (rectCoordSE< rootNode.edgeCoordMax) {
-                                out.println("5 scenario");
+//                                out.println("5 scenario");
                                 rectanglePoints[1].coord[rootNode.sortType] = rootNode.edgeCoordMin;
-                                findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
+                                return findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
                                 //5 scenario
                             }
                             else {
-                                out.println("2 scenario");
+//                                out.println("2 scenario");
                                 Point[] newRectPoints;
                                 int missCoord = rectanglePoints[1].coord[rootNode.sortType];
                                 newRectPoints = rectanglePoints;
                                 newRectPoints[1].coord[rootNode.sortType] = rootNode.edgeCoordMin;
-                                findPointsInRectanglePrivate(newRectPoints, rootNode.left);
+                                ArrayList<Point> foundPointsLeft = findPointsInRectanglePrivate(newRectPoints, rootNode.left);
                                 newRectPoints[0].coord[rootNode.sortType] = rootNode.edgeCoordMax;
                                 newRectPoints[1].coord[rootNode.sortType] = missCoord;
-                                findPointsInRectanglePrivate(newRectPoints, rootNode.right);
+                                ArrayList<Point> foundPointsRight = findPointsInRectanglePrivate(newRectPoints, rootNode.right);
+                                ArrayList<Point> allFoundPoints = new ArrayList<Point>(foundPointsLeft);
+                                if (foundPointsRight != null) allFoundPoints.addAll(foundPointsRight);
+                                return allFoundPoints;
                                 // 2 scenario
                             }
                         }
@@ -238,48 +243,52 @@ public final class BinaryTree2D {
                     else{
                         if (rectCoordNW < rootNode.edgeCoordMax){
                             if (rectCoordSE< rootNode.edgeCoordMax){
-                                out.println("4 scenario");
-                                return false; //no points in rectangle
+//                                out.println("4 scenario");
+                                return null; //no points in rectangle
                                 // 4 scenario
                             }
                             else{
-                                out.println("6 scenario");
+//                                out.println("6 scenario");
                                 rectanglePoints[0].coord[rootNode.sortType] = rootNode.edgeCoordMax;
-                                findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
+                                return findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                                 // 6 scenario
                             }
                         }
                         else{
-                            out.println("3 scenario");
-                            findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
+//                            out.println("3 scenario");
+                            return findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                             //3 scenario
                         }
                     }
-                    break;
                 case 1:
                     if (rectCoordSE < rootNode.edgeCoordMin){
                         if (rectCoordNW <= rootNode.edgeCoordMin){
-                            out.println("1 scenario");
-                            findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
+//                            out.println("1 scenario");
+                            return findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
                             //1 scenario
                         }
                         else{
                             if (rectCoordNW < rootNode.edgeCoordMax) {
-                                out.println("5 scenario");
+//                                out.println("5 scenario");
                                 rectanglePoints[0].coord[rootNode.sortType] = rootNode.edgeCoordMin;
-                                findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
+                                return findPointsInRectanglePrivate(rectanglePoints, rootNode.left);
                                 //5 scenario
                             }
                             else {
-                                out.println("2 scenario");
+//                                out.println("2 scenario");
                                 Point[] newRectPoints;
                                 int missCoord = rectanglePoints[0].coord[rootNode.sortType];
                                 newRectPoints = rectanglePoints;
                                 newRectPoints[0].coord[rootNode.sortType] = rootNode.edgeCoordMin;
-                                findPointsInRectanglePrivate(newRectPoints, rootNode.left);
+                                ArrayList<Point> foundPointsLeft = findPointsInRectanglePrivate(newRectPoints, rootNode.left);
+
                                 newRectPoints[1].coord[rootNode.sortType] = rootNode.edgeCoordMax;
                                 newRectPoints[0].coord[rootNode.sortType] = missCoord;
-                                findPointsInRectanglePrivate(newRectPoints, rootNode.right);
+                                ArrayList<Point> foundPointsRight = findPointsInRectanglePrivate(newRectPoints, rootNode.right);
+
+                                ArrayList<Point> allFoundPoints = new ArrayList<Point>(foundPointsLeft);
+                                if (foundPointsRight != null) allFoundPoints.addAll(foundPointsRight);
+                                return allFoundPoints;
                                 // 2 scenario
                             }
                         }
@@ -287,43 +296,45 @@ public final class BinaryTree2D {
                     else{
                         if (rectCoordSE < rootNode.edgeCoordMax){
                             if (rectCoordNW < rootNode.edgeCoordMax){
-                                out.println("4 scenario");
-                                return false; //no points in rectangle
+//                                out.println("4 scenario");
+                                return null; //no points in rectangle
                                 // 4 scenario
                             }
                             else{
-                                out.println("6 scenario");
+//                                out.println("6 scenario");
                                 rectanglePoints[1].coord[rootNode.sortType] = rootNode.edgeCoordMax;
-                                findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
+                                return findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                                 // 6 scenario
                             }
                         }
                         else{
-                            out.println("3 scenario");
-                            findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
+//                            out.println("3 scenario");
+                            return findPointsInRectanglePrivate(rectanglePoints, rootNode.right);
                             //3 scenario
                         }
                     }
-                    break;
             }
         }
         else{
             if (rootNode.value != null){
                 //standart search
                 BinaryTree2D.printPointArray(rootNode.value);
-                out.print("Find points in this block: ");
+//                out.print("Find points in this block: ");
                 for (Point point : rootNode.value){
                     if (    point.coord[0] >= rectanglePoints[0].coord[0] &&
                             point.coord[1] <= rectanglePoints[0].coord[1] &&
                             point.coord[0] <= rectanglePoints[1].coord[0] &&
                             point.coord[1] >= rectanglePoints[1].coord[1]){
                         BinaryTree2D.printPoint (point);
+                        pointsFoundInRectangle.add(point);
                     }
                 }
-                out.println();
+                return pointsFoundInRectangle;
+//                out.println();
             }
         }
-        return true; // временно
+        return null;
+//        return pointsFoundInRectangle; // временно
     }
 //    public Point[] searchPointsForRectangle{
 //        return ;
