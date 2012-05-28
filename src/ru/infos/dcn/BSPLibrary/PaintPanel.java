@@ -23,7 +23,7 @@ import static java.lang.Math.round;
 class PaintPanel extends JPanel {
     private ArrayList<Point> pointsArrayForMouseAction = new ArrayList<Point>();
     private Point[] pointsArrayForTreeData;
-    private final int PAD = 50;
+    private final static int PAD = 50;
     private static final int colorsNumber = Stucture.N / Stucture.minLeafSize; //количество цветов прямоугольников
     private Color[] pColor = new Color[colorsNumber]; //массив цветов прямоугольника
     private BinaryTree2D.Node rootNode;
@@ -67,8 +67,8 @@ class PaintPanel extends JPanel {
         //coord value means x or y
         int max = -Integer.MAX_VALUE;
         for(int i = 0; i < points.length; i++) {
-            if((int)points[i].coord[coord] > max)
-                max = (int)points[i].coord[coord];
+            if(points[i].coord[coord] > max)
+                max = points[i].coord[coord];
         }
         return max;
     }
@@ -132,7 +132,7 @@ class PaintPanel extends JPanel {
             Point[] rectPoints = new Point[2];
             rectPoints[0] = new Point();
             rectPoints[1] = new Point();
-            rectPoints[0].coord[0] = Math.round((int)((pointsArrayForMouseAction.get(0).coord[0] - PAD) / xCoordinateCoeff));
+            rectPoints[0].coord[0] = Math.round((int) ((pointsArrayForMouseAction.get(0).coord[0] - PAD) / xCoordinateCoeff));
             rectPoints[0].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(0).coord[1] - PAD + h) / yCoordinateCoeff));
             rectPoints[1].coord[0] = Math.round((int) ((pointsArrayForMouseAction.get(1).coord[0] - PAD) / xCoordinateCoeff));
             rectPoints[1].coord[1] = Math.round((int) ((-pointsArrayForMouseAction.get(1).coord[1] - PAD + h) / yCoordinateCoeff));

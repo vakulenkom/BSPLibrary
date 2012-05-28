@@ -21,8 +21,6 @@ public class Main {
         bspTree.print();
 
         bspTree.drawBSPTreeJavaGUI();
-
-
     }
 
 }
